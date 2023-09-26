@@ -1,0 +1,4 @@
+.contact-form button {
+  @apply text-[#002538] bg-transparent rounded-xl font-bold
+    hover:bg-zinc-200 hover:rounded-xl;
+}
