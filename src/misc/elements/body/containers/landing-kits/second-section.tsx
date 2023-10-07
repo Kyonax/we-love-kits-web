@@ -1,6 +1,6 @@
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import WeLoveKits from '../../../../assets/we-love-kits.png';
+import WeLoveKits from '../../../../assets/we-love-kits.webp';
 
 interface SecondSectionProps {}
 

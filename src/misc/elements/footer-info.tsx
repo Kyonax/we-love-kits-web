@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import LogoWeLoveKits from '../assets/WeLoveKits_Logo_Pink.png';
+import LogoWeLoveKits from '../assets/WeLoveKits_Logo_Pink.webp';
 
 import { EnvelopeIcon } from '@heroicons/react/24/outline'
 import { SocialIcon } from 'react-social-icons'
@@ -40,37 +40,37 @@ const FooterInfo: React.FC<FooterInfoProps> = ({}) => {
                 
                 <div className="w-1/3 block flex">
                     <div className="m-auto mr-0 space-y-3">                        
-                        <button type='button' className='relative icon-style bg-[#4DFF8F] hover:bg-[#4DFF8F] flex text-black
-                                              hover:text-black py-4 px-16 pr-[2rem] rounded-full border-none font-bold'>
+                        <button type='button' className='relative icon-style bg-[#4DFF8F] hover:bg-[#FFF384] flex text-black
+                                              hover:text-black py-4 px-16 pr-[2rem] rounded-full border-none font-bold transition duration-700'>
                             <p className="absolute left-5 top-0 bottom-0 m-auto py-1">
                             <SocialIcon network="whatsapp" bgColor="none"/></p>
-                            <p className="ml-1 text-style opacity-[70%]">HABLEMOS</p>
+                            <p className="ml-1 text-style">HABLEMOS</p>
                         </button>
 
 
-                        <button type='button' className='relative icon-style bg-[#D1C5FF] hover:bg-[#D1C5FF] flex text-black
-                                              hover:text-black py-4 px-16 pr-[2rem] rounded-full border-none font-bold'>
-                            <EnvelopeIcon className="icons opacity-[70%] absolute w-6 left-8 " />
-                            <p className="ml-1 text-style opacity-[70%]">HOLA@WELOVEKITS.COM</p>
+                        <button type='button' className='relative icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
+                                              hover:text-black py-4 px-16 pr-[2rem] rounded-full border-none font-bold transition duration-700'>
+                            <EnvelopeIcon className="icons absolute w-6 left-8 " />
+                            <p className="ml-1 text-style ">HOLA@WELOVEKITS.COM</p>
                         </button>
 
                         <div className="flex space-x-[1.6rem]">
                             
-                        <button type='button' className='relative icon-style bg-[#D1C5FF] hover:bg-[#D1C5FF] flex text-black
-                                              hover:text-black py-0 px-4 rounded-full border-none font-bold'>
+                        <button type='button' className='relative icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
+                                              hover:text-black py-0 px-4 rounded-full border-none font-bold transition duration-700'>
                             <p className="left-5 top-0 bottom-0 m-auto ">
                             <SocialIcon network="instagram" bgColor="none"/></p>
                         </button>
 
 
-                        <button type='button' className='relative icon-style bg-[#D1C5FF] hover:bg-[#D1C5FF] flex text-black
-                                              hover:text-black py-0 px-4 rounded-full border-none font-bold'>
+                        <button type='button' className='relative icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
+                                              hover:text-black py-0 px-4 rounded-full border-none font-bold transition duration-700'>
                             <p className="left-5 top-0 bottom-0 m-auto ">
                             <SocialIcon network="linkedin" bgColor="none"/></p>
                         </button>
 
-                        <button type='button' className='relative icon-style bg-[#D1C5FF] hover:bg-[#D1C5FF] flex text-black
-                                              hover:text-black py-0 px-4 rounded-full border-none font-bold'>
+                        <button type='button' className='relative icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
+                                              hover:text-black py-0 px-4 rounded-full border-none font-bold transition duration-700'>
                             <p className="left-5 top-0 bottom-0 m-auto ">
                             <SocialIcon network="tiktok" bgColor="none"/></p>
                         </button>

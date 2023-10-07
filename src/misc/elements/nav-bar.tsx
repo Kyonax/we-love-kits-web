@@ -5,7 +5,7 @@ import './elements-css/nav-bar.css';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { SocialIcon } from 'react-social-icons'
 
-import LogoWeLoveKits from '../assets/WeLoveKits_Logo.png';
+import LogoWeLoveKits from '../assets/WeLoveKits_Logo.webp';
 import { Link } from 'react-router-dom';
 
 import "./page-up-down.css"
@@ -17,7 +17,7 @@ const NavBar: React.FC<NavBarProps> = ({}) => {
     const handleClick = () => setNav(!nav);
 
     return (
-        <div className='relative flex justify-center'>
+        <div className='relative flex justify-center z-50'>
             <div className={`absolute flex w-screen min-w-[1200px] max-w-[1200px]`}>
                 <div className={`p-1 pt-2 pb-2 md:p-12 md:pt-6 md:pb-2 flex justify-between items-center w-full z-10`}>
                     <div className='flex w-[10%] items-center'>
@@ -31,17 +31,17 @@ const NavBar: React.FC<NavBarProps> = ({}) => {
 
                     <div className='flex items-center'>
                         <ul className='hidden md:flex'>
-                            <li className='hover-nice hover:cursor-pointer m-auto opacity-[70%] hover:opacity-[100%] font-bold easy-in hover:easy-out duration-300 transition-opacity '>KITS</li>
-                            <li className='hover-nice hover:cursor-pointer m-auto opacity-[70%] hover:opacity-[100%] font-bold easy-in hover:easy-out duration-300 transition-opacity'>CATEGORIAS</li>
-                            <li className='hover-nice hover:cursor-pointer m-auto opacity-[70%] hover:opacity-[100%] font-bold easy-in hover:easy-out duration-300 transition-opacity'>CLIENTES</li>
-                            <li className='hover-nice hover:cursor-pointer m-auto opacity-[70%] hover:opacity-[100%] font-bold easy-in hover:easy-out duration-300 transition-opacity'>CONTACTO</li>
+                            <li className='hover-nice hover:cursor-pointer m-auto hover:opacity-[100%] font-bold easy-in hover:easy-out duration-300 transition-opacity '>KITS</li>
+                            <li className='hover-nice hover:cursor-pointer m-auto hover:opacity-[100%] font-bold easy-in hover:easy-out duration-300 transition-opacity'>CATEGORIAS</li>
+                            <li className='hover-nice hover:cursor-pointer m-auto hover:opacity-[100%] font-bold easy-in hover:easy-out duration-300 transition-opacity'>CLIENTES</li>
+                            <li className='hover-nice hover:cursor-pointer m-auto hover:opacity-[100%] font-bold easy-in hover:easy-out duration-300 transition-opacity'>CONTACTO</li>
                             <li className='hover:cursor-pointer m-auto font-bold'>
-                                <button type='button' className='relative icon-style bg-[#4DFF8F] hover:bg-[#4DFF8F] flex text-black
-                                              hover:text-black py-4 px-16 pr-[2rem] rounded-full border-none'>
+                                <button type='button' className='relative icon-style bg-[#4DFF8F] hover:bg-[#FFF384] flex text-black
+                                              hover:text-black py-4 px-16 pr-[2rem] rounded-full border-none transition duration-700'>
 
                                     <p className="absolute left-5 top-0 bottom-0 m-auto py-1">
                                         <SocialIcon network="whatsapp" bgColor="none"/></p>
-                                        <p className="ml-1 text-style opacity-[70%]">HABLEMOS</p>
+                                        <p className="ml-1 text-style opacity-[100%]">HABLEMOS</p>
                                 </button>
                             </li>
                         </ul>

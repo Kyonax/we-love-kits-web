@@ -1,6 +1,6 @@
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import LogoBancolombia from '../../../../assets/bancolombia_logo.png'
+import LogoBancolombia from '../../../../assets/bancolombia_logo.webp'
 import LogoNutresa from '../../../../assets/nutresa_logo.svg'
 
 interface FifthSectionProps {}

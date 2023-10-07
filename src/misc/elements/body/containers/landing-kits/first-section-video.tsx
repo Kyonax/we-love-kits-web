@@ -5,6 +5,19 @@ import { Link } from "react-router-dom";
 import "./sections.css";
 import { useEffect, useState, useRef } from "react";
 
+import ARTE_LETTER from '../../../../assets/banner-letters/ARTE_LETTER.webp';
+import ARTE_LETTER_LINE from '../../../../assets/banner-letters/ARTE_LETTER_LINE.webp';
+import AMOR_LETTER from '../../../../assets/banner-letters/AMOR_LETTER.webp';
+import AMOR_LETTER_LINE from '../../../../assets/banner-letters/AMOR_LETTER_LINE.webp';
+import DESIGN_LETTER from '../../../../assets/banner-letters/DESIGN_LETTER.webp';
+import DESIGN_LETTER_LINE from '../../../../assets/banner-letters/DESIGN_LETTER_LINE.webp';
+import KITS_LETTER from '../../../../assets/banner-letters/KITS_LETTER.webp';
+import KITS_LETTER_LINE from '../../../../assets/banner-letters/KITS_LETTER_LINE.webp';
+import USABLES_LETTER from '../../../../assets/banner-letters/USABLES_LETTER.webp';
+import USABLES_LETTER_LINE from '../../../../assets/banner-letters/USABLES_LETTER_LINE.webp';
+import XP_LETTER from '../../../../assets/banner-letters/XP_LETTER.webp';
+import XP_LETTER_LINE from '../../../../assets/banner-letters/XP_LETTER_LINE.webp';
+
 interface FirstSectionProps {
     innerPosition: any;
 }
@@ -20,8 +33,10 @@ const FirstSection: React.FC<FirstSectionProps> = ({ innerPosition }) => {
     const [isCrash, setIsCrash] = useState(false);
     const [frameIndex, setFrameIndex] = useState(0);
     const [alreadyPlayed, setAlreadyPlayed] = useState(false);
+    const [toAnimation, setToAnimation] = useState(false);
+    const [inAnimation, setInAnimation] = useState(false);
     const [bannerColor, setBannerColor] = useState("#AB94FF");
-    const [contentText, setContentText] = useState("LOVE");
+    const [contentText, setContentText] = useState("ARTE");
 
     const attempPlay = () => {
         videoPlay &&
@@ -36,11 +51,12 @@ const FirstSection: React.FC<FirstSectionProps> = ({ innerPosition }) => {
         console.log(`Iterator: ${i}`);
         if (i === 197) {
             renderCanvas();
+            setAlreadyPlayed(true)
             return setIsFetch(true);
         }
 
         const img = new Image();
-        const imgSrc = require(`../../../../assets/landing-kits-sequence/${i}.png`);
+        const imgSrc = require(`../../../../assets/landing-kits-sequence/${i}.webp`);
         console.log(imgSrc);
         img.src = imgSrc;
         img.onload = async () => {
@@ -59,8 +75,8 @@ const FirstSection: React.FC<FirstSectionProps> = ({ innerPosition }) => {
         const fetching = await fetchingImages(i);
     }
 
-    const staticFrame = require(`../../../../assets/landing-kits-sequence/196.png`);
-    const currentFrame = require(`../../../../assets/landing-kits-sequence/${numberSequence}.png`);
+    const staticFrame = require(`../../../../assets/landing-kits-sequence/196.webp`);
+    const currentFrame = require(`../../../../assets/landing-kits-sequence/${numberSequence}.webp`);
 
     const handleScroll = () => {
         const position = innerPosition,
@@ -71,16 +87,9 @@ const FirstSection: React.FC<FirstSectionProps> = ({ innerPosition }) => {
             Math.floor(scrollFraction * frameCount)
         );
 
-
-        if (position > 0) {
-            setAlreadyPlayed(true)
-        }
-
-        /**
           console.log(
               `Position: ${position} | MaxScroll: ${maxScroll} | ScrollFraction: ${scrollFraction} | FrameIndex: ${frameIndex}`
           );
-         */
     };
 
     const renderCanvas = () => {
@@ -88,7 +97,11 @@ const FirstSection: React.FC<FirstSectionProps> = ({ innerPosition }) => {
         const canvas = canvasRef.current;
 
         if (canvas) {
-            canvas.height = 874;
+            /**
+            * 1200 800
+              1027
+             */
+            canvas.height = 1027;
             canvas.width = 1200;
             if (canvas != null) {
                 const context = canvas.getContext("2d");
@@ -97,33 +110,59 @@ const FirstSection: React.FC<FirstSectionProps> = ({ innerPosition }) => {
     };
 
     useEffect(() => {
+         if (inAnimation === false){
+            if (innerPosition > 120 && innerPosition <= 132) {
+                if (frameIndex === 196) {
+                    setFrameIndex(96);
+                    setToAnimation(true);
+                    console.log(toAnimation);
+                } else if (frameIndex === 0) {
+                    setToAnimation(false);
+                    console.log(toAnimation);
+                }
+            }
+         }      
+    }, [innerPosition]);
+
+
+    useEffect(() => {
         if (isFetch === true) {
             var rottenNumber = frameIndex;
 
             if (alreadyPlayed === true) {
 
                 const interval = setInterval(() => {
+
+                if (toAnimation === false){
+
                     rottenNumber = rottenNumber + 1;
-                    if (rottenNumber >= images.length) rottenNumber = 196;
+                    if (rottenNumber >= images.length) {rottenNumber = 196; setInAnimation(false)} else {setInAnimation(true)}
                     setFrameIndex(rottenNumber);
+                } else if (toAnimation === true) {
+                    rottenNumber = rottenNumber - 1;
+                    if (rottenNumber <= 0) {rottenNumber = 0; setInAnimation(false)} else {setInAnimation(true)}
+                    setFrameIndex(rottenNumber);
+                }
+
                 }, 28.66);
 
                 return () => clearInterval(interval);
             }
         }
 
-    }, [frameIndex, isFetch, alreadyPlayed]);
+    }, [frameIndex, isFetch, alreadyPlayed, toAnimation]);
 
 
     useEffect(() => {
-        const theColors = ["#FFF384","#FFBCFD","#A0FFC3","#7DE2FF","#AB94FF"]
-        const theWordsElement = ["ARTE","ÙNICO","DISEÑO","PERSONALIZADOS", "EXPERIENCIAS"]
+        const theColors = ["#AB94FF","#FFE661","#FFBCFD","#FF8787","#7DE2FF","#7EEDAA"]
+        const theWordsElement = ["ARTE","AMOR","KITS","DISEÑO", "USABLES", "EXPERIENCIAS"]
 
-        let i = 0;
+        let i = 0, random_color = Math.floor(Math.random() * 5);
         const interval = setInterval(() => {
             if (i >= theColors.length) i = 0;
-            setBannerColor(theColors[i])
+            setBannerColor(theColors[random_color])
             setContentText(theWordsElement[i])
+            random_color = Math.floor(Math.random() * 5);
             i++
         }, 5000);
         
@@ -147,9 +186,9 @@ const FirstSection: React.FC<FirstSectionProps> = ({ innerPosition }) => {
 
         const context = canvasRef.current.getContext("2d");
         let theFrame = frameIndex;
-        let width = 725, height = 907;
+        let width = 800, height = 690.66;
 
-        let canvaWidth = 236.5, canvaHeight = 149;
+        let canvaWidth = 200, canvaHeight = 188;
 
         if (context != null) {
             let requestId: any;
@@ -157,12 +196,11 @@ const FirstSection: React.FC<FirstSectionProps> = ({ innerPosition }) => {
 
                 if (images[theFrame] === undefined) {
                     context.clearRect(0, 0, width, height);
-                    context.drawImage(images[images.length - 1], canvaWidth, canvaHeight, width, width);
+                    context.drawImage(images[images.length - 1], canvaWidth, canvaHeight, width, height);
                 };
                 if (images[theFrame] === undefined) return;
                 context.clearRect(0, 0, width, height);
-                context.drawImage(images[theFrame], canvaWidth, canvaHeight, width, width);
-                console.log(`InnerWidth: ${width} - Inner Heigth: ${height} /n CanvaWidth: ${canvaWidth} Canva Heigth: ${canvaHeight} /n Width0.76: ${width *0.76} Width0.75: ${width * 0.75}`);
+                context.drawImage(images[theFrame], canvaWidth, canvaHeight, width, height);
                 requestId = requestAnimationFrame(render);
             };
 
@@ -176,15 +214,53 @@ const FirstSection: React.FC<FirstSectionProps> = ({ innerPosition }) => {
         <div style={{backgroundColor: bannerColor}} className="relative flex justify-center mt-0 transition-all easy-in delay-300">
             <div className="absolute text-center text-white flex w-full h-full">
                 <div className="w-full h-full relative m-auto mt-[6rem]">
-                    <div className="w-full h-full m-auto relative flex text-center min-w-[1250px] max-w-[1250px] transition easy-in-out duration-700">
-                        <h1 className={contentText === "LOVE" ? 'opacity-100 text-base-love' : 'opacity-0 text-base-love'}>LOVE</h1>
-                        <h1 className={contentText === "ARTE" ? 'opacity-100 text-base-arte' : 'opacity-0 text-base-arte'}>ARTE</h1>
-                        <h1 className={contentText === "ÙNICO" ? 'opacity-100 text-base-unique' : 'opacity-0 text-base-unique'}>ÙNICO</h1>
-                        <h1 className={contentText === "DISEÑO" ? 'opacity-100 text-base-design' : 'opacity-0 text-base-design'}>DISEÑO</h1>
-                        <h1 className={contentText === "PERSONALIZADOS" ? 'opacity-100 text-base-custom' : 'opacity-0 text-base-custom'}>
-                            PERSONA<p className="mt-[-11rem]">LIZADOS</p></h1>
-                        <h1 className={contentText === "EXPERIENCIAS" ? 'opacity-100 text-base-xp' : 'opacity-0 text-base-xp'}>
-                            EXPERI<p className="mt-[-15rem]">ENCIA</p></h1>
+                    <div className="w-full h-full left-0 right-0 m-auto absolute text-center min-w-[1250px] max-w-[1250px] transition easy-in-out duration-700">
+
+                        <h1 className={contentText === "ARTE" ? 'opacity-100 transition-every' : 'opacity-0 transition-every'}>
+                            <LazyLoadImage src={ARTE_LETTER} />
+                        </h1>
+
+                        <h1 className={contentText === "ARTE" ? 'opacity-100 text-stroke transition-every' : 'opacity-0 text-stroke transition-every'}>
+                            <LazyLoadImage src={ARTE_LETTER_LINE} />
+                        </h1>
+
+
+                        <h1 className={contentText === "AMOR" ? 'opacity-100 transition-every' : 'opacity-0 transition-every'}>
+                            <LazyLoadImage src={AMOR_LETTER} />
+                        </h1>
+
+                        <h1 className={contentText === "AMOR" ? 'opacity-100 transition-every text-stroke' : 'opacity-0 transition-every text-stroke'}>
+                            <LazyLoadImage src={AMOR_LETTER_LINE} />
+                        </h1>
+
+                        <h1 className={contentText === "KITS" ? 'opacity-100 transition-every px-[10rem]' : 'opacity-0 transition-every px-[10rem]'}>
+                            <LazyLoadImage src={KITS_LETTER} />
+                        </h1>
+
+                        <h1 className={contentText === "KITS" ? 'opacity-100 transition-every text-stroke px-[10rem]' : 'opacity-0 transition-every text-stroke px-[10rem]'}>
+                            <LazyLoadImage src={KITS_LETTER_LINE} />
+                        </h1>
+
+                        <h1 className={contentText === "DISEÑO" ? 'opacity-100 transition-every' : 'opacity-0 transition-every'}>
+                            <LazyLoadImage src={DESIGN_LETTER} />
+                        </h1>
+                        <h1 className={contentText === "DISEÑO" ? 'opacity-100 transition-every text-stroke' : 'opacity-0 transition-every text-stroke'}>
+                            <LazyLoadImage src={DESIGN_LETTER_LINE} />
+                        </h1>
+
+                        <h1 className={contentText === "USABLES" ? 'opacity-100 transition-every px-[10rem]' : 'opacity-0 transition-every px-[10rem]'}>
+                            <LazyLoadImage src={USABLES_LETTER} />
+                        </h1>
+                        <h1 className={contentText === "USABLES" ? 'opacity-100 transition-every text-stroke px-[10rem]' : 'opacity-0 transition-every text-stroke px-[10rem]'}>
+                            <LazyLoadImage src={USABLES_LETTER_LINE} />
+                        </h1>
+
+                        <h1 className={contentText === "EXPERIENCIAS" ? 'opacity-100 transition-every' : 'opacity-0 transition-every'}>
+                            <LazyLoadImage src={XP_LETTER} />
+                        </h1>
+                        <h1 className={contentText === "EXPERIENCIAS" ? 'opacity-100 transition-every text-stroke' : 'opacity-0 transition-every text-stroke'}>
+                            <LazyLoadImage src={XP_LETTER_LINE} />
+                        </h1>
                     </div>
                 </div>
             </div>

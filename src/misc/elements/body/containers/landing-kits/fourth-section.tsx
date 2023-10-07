@@ -1,12 +1,12 @@
-import KitBienvenida from '../../../../assets/Kit-bienvenida.jpg'
-import KitEventos from '../../../../assets/Kit-bienvenida.jpg'
-import KitProyectos from '../../../../assets/Kit-bienvenida.jpg'
-import KitReconocimiento from '../../../../assets/Kit-bienvenida.jpg'
+import KitBienvenida from '../../../../assets/Kit-bienvenida.webp'
+import KitEventos from '../../../../assets/Kit-bienvenida.webp'
+import KitProyectos from '../../../../assets/Kit-bienvenida.webp'
+import KitReconocimiento from '../../../../assets/Kit-bienvenida.webp'
 
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import HeartText from '../../../../assets/hearts-text.png'
-import HeartGirl from '../../../../assets/heart-girl.png'
+import HeartText from '../../../../assets/hearts-text.webp'
+import HeartGirl from '../../../../assets/heart-girl.webp'
 
 interface FourthSectionProps {}
 
@@ -26,7 +26,7 @@ const FourthSection: React.FC<FourthSectionProps> = ({}) => {
                     <div style={{ backgroundImage: `url(${KitBienvenida})` }} className="relative w-full m-6 h-[20rem] bg-cover bg-center rounded-2xl">
                             <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer'>
                                 <button className='group py-2 px-10 bg-black border-none text-white hover:bg-black hover:text-white rounded-full'>
-                                    <p className="opacity-[70%] group-hover:opacity-[100%]
+                                    <p className="group-hover:text-[#FFF384]
                                                   easy-in group-hover:easy-out duration-300 transition-opacity">
                                         KIT BIENVENIDA
                                     </p>
@@ -36,7 +36,7 @@ const FourthSection: React.FC<FourthSectionProps> = ({}) => {
                     <div style={{ backgroundImage: `url(${KitEventos})` }} className="relative w-full m-6 h-[20rem] bg-cover bg-center rounded-2xl">
                             <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer'>
                                 <button className='group py-2 px-10 bg-black border-none text-white hover:bg-black hover:text-white rounded-full'>
-                                    <p className="opacity-[70%] group-hover:opacity-[100%]
+                                    <p className="group-hover:text-[#FFF384]
                                                   easy-in group-hover:easy-out duration-300 transition-opacity">
                                         KIT EVENTOS
                                     </p>
@@ -46,7 +46,7 @@ const FourthSection: React.FC<FourthSectionProps> = ({}) => {
                     <div style={{ backgroundImage: `url(${KitProyectos})` }} className="relative w-full m-6 h-[20rem] bg-cover bg-center rounded-2xl">
                             <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer'>
                                 <button className='group py-2 px-10 bg-black border-none text-white hover:bg-black hover:text-white rounded-full'>
-                                    <p className="opacity-[70%] group-hover:opacity-[100%]
+                                    <p className="group-hover:text-[#FFF384]
                                                   easy-in group-hover:easy-out duration-300 transition-opacity">
                                         KIT PROYECTOS
                                     </p>
@@ -56,7 +56,7 @@ const FourthSection: React.FC<FourthSectionProps> = ({}) => {
                     <div style={{ backgroundImage: `url(${KitReconocimiento})` }} className="relative w-full m-6 h-[20rem] bg-cover bg-center rounded-2xl">
                             <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer'>
                                 <button className='group py-2 px-10 bg-black border-none text-white hover:bg-black hover:text-white rounded-full'>
-                                    <p className="opacity-[70%] group-hover:opacity-[100%]
+                                    <p className="group-hover:text-[#FFF384]
                                                   easy-in group-hover:easy-out duration-300 transition-opacity">
                                         KIT RECONOCIMIENTO
                                     </p>

@@ -1,6 +1,6 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-import Character from '../../../../assets/character-down.png'
+import Character from '../../../../assets/character-down.webp'
 
 import './sections.css';
 
@@ -62,10 +62,10 @@ const SixthSection: React.FC<SixthSectionProps> = ({}) => {
                         </form> <br />
 
 
-                        <button type='button' className='group bg-gradient-to-r mt-5 bg-[#4DFF8F] hover:bg-[#4DFF8F] 
-                                          text-black hover:text-black font-bold py-3 px-14 rounded-full border-none'>
-                            <p className='opacity-[60%] group-hover:opacity-[100%] easy-in group-hover:easy-out
-                                          duration-300 transition-opacity'>ENVIAR</p>
+                        <button type='button' className='group bg-gradient-to-r mt-5 bg-[#4DFF8F] hover:bg-[#FFF384]
+                                          text-black hover:text-black font-bold py-3 px-14 rounded-full border-none transition duration-700'>
+                            <p className='easy-in group-hover:easy-out
+                                          duration-700 transition-opacity'>ENVIAR</p>
                         </button>
                         </div>
                     </div>

@@ -1,12 +1,12 @@
-import Agenda from '../../../../assets/Agenda.jpg'
-import Carnet from '../../../../assets/Carnet.jpg'
-import Camisa from '../../../../assets/Camisas.jpg'
-import Lamy from '../../../../assets/Lamy.jpg'
-import Mug from '../../../../assets/Mug-Peltre.jpg'
-import Pin from '../../../../assets/Pin.jpg'
-import Buttons from '../../../../assets/Button.jpg'
-import Caps from '../../../../assets/Cap.jpg'
-import Thermos from '../../../../assets/thermo.jpg'
+import Agenda from '../../../../assets/Agenda.webp'
+import Carnet from '../../../../assets/Carnet.webp'
+import Camisa from '../../../../assets/Camisas.webp'
+import Lamy from '../../../../assets/Lamy.webp'
+import Mug from '../../../../assets/Mug-Peltre.webp'
+import Pin from '../../../../assets/Pin.webp'
+import Buttons from '../../../../assets/Button.webp'
+import Caps from '../../../../assets/Cap.webp'
+import Thermos from '../../../../assets/thermo.webp'
 
 interface ThirdSectionProps {}
 
@@ -25,7 +25,7 @@ const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
                         <div style={{ backgroundImage: `url(${Mug})` }} className="relative w-1/4 mr-2 bg-cover bg-center rounded-2xl h-full">
                             <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer'>
                                 <button className='group py-2 px-10 bg-black border-none text-white hover:bg-black hover:text-white rounded-full'>
-                                    <p className="opacity-[70%] group-hover:opacity-[100%]
+                                    <p className="group-hover:text-[#FFF384]
                                                   easy-in group-hover:easy-out duration-300 transition-opacity">
                                         MUGS
                                     </p>
@@ -35,7 +35,7 @@ const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
                         <div style={{ backgroundImage: `url(${Caps})` }} className="relative w-1/4 mx-2 bg-cover bg-center rounded-2xl h-full">
                             <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer'>
                                 <button className='group py-2 px-10 bg-black border-none text-white hover:bg-black hover:text-white rounded-full'>
-                                    <p className="opacity-[70%] group-hover:opacity-[100%]
+                                    <p className="group-hover:text-[#FFF384]
                                                   easy-in group-hover:easy-out duration-300 transition-opacity">
                                         GORRA
                                     </p>
@@ -45,7 +45,7 @@ const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
                         <div style={{ backgroundImage: `url(${Camisa})` }} className="relative w-2/4 ml-2 bg-cover bg-center rounded-2xl h-full">
                             <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer'>
                                 <button className='group py-2 px-10 bg-black border-none text-white hover:bg-black hover:text-white rounded-full'>
-                                    <p className="opacity-[70%] group-hover:opacity-[100%]
+                                    <p className="group-hover:text-[#FFF384]
                                                   easy-in group-hover:easy-out duration-300 transition-opacity">
                                         CAMISETA
                                     </p>
@@ -57,7 +57,7 @@ const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
                         <div style={{ backgroundImage: `url(${Agenda})` }} className="relative w-2/4 mr-2 bg-cover bg-center rounded-2xl h-full">
                             <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer'>
                                 <button className='group py-2 px-10 bg-black border-none text-white hover:bg-black hover:text-white rounded-full'>
-                                    <p className="opacity-[70%] group-hover:opacity-[100%]
+                                    <p className="group-hover:text-[#FFF384]
                                                   easy-in group-hover:easy-out duration-300 transition-opacity">
                                         AGENDA
                                     </p>
@@ -67,7 +67,7 @@ const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
                         <div style={{ backgroundImage: `url(${Lamy})` }} className="relative flex w-1/4 mx-2 bg-cover bg-center rounded-2xl h-full">
                             <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer'>
                                 <button className='group py-2 px-10 bg-black border-none text-white hover:bg-black hover:text-white rounded-full'>
-                                    <p className="opacity-[70%] group-hover:opacity-[100%]
+                                    <p className="group-hover:text-[#FFF384]
                                                   easy-in group-hover:easy-out duration-300 transition-opacity">
                                         LAMY
                                     </p>
@@ -77,7 +77,7 @@ const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
                         <div style={{ backgroundImage: `url(${Thermos})` }} className="relative w-1/4 ml-2 bg-cover bg-center rounded-2xl h-full">
                             <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer'>
                                 <button className='group py-2 px-10 bg-black border-none text-white hover:bg-black hover:text-white rounded-full'>
-                                    <p className="opacity-[70%] group-hover:opacity-[100%]
+                                    <p className="group-hover:text-[#FFF384]
                                                   easy-in group-hover:easy-out duration-300 transition-opacity">
                                         TERMO
                                     </p>
@@ -89,7 +89,7 @@ const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
                         <div style={{ backgroundImage: `url(${Buttons})` }} className="relative w-1/4 mr-2 bg-cover bg-center rounded-2xl h-full">
                             <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer'>
                                 <button className='group py-2 px-10 bg-black border-none text-white hover:bg-black hover:text-white rounded-full'>
-                                    <p className="opacity-[70%] group-hover:opacity-[100%]
+                                    <p className="group-hover:text-[#FFF384]
                                                   easy-in group-hover:easy-out duration-300 transition-opacity">
                                         BOTONES
                                     </p>
@@ -99,7 +99,7 @@ const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
                         <div style={{ backgroundImage: `url(${Pin})` }} className="relative flex w-2/4 mx-2 bg-cover bg-center rounded-2xl h-full">
                             <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer'>
                                 <button className='group py-2 px-10 bg-black border-none text-white hover:bg-black hover:text-white rounded-full'>
-                                    <p className="opacity-[70%] group-hover:opacity-[100%]
+                                    <p className="group-hover:text-[#FFF384]
                                                   easy-in group-hover:easy-out duration-300 transition-opacity">
                                         PIN
                                     </p>
@@ -109,7 +109,7 @@ const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
                         <div style={{ backgroundImage: `url(${Carnet})` }} className="relative w-1/4 ml-2 bg-cover bg-center rounded-2xl h-full">
                             <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer'>
                                 <button className='group py-2 px-10 bg-black border-none text-white hover:bg-black hover:text-white rounded-full'>
-                                    <p className="opacity-[70%] group-hover:opacity-[100%]
+                                    <p className="group-hover:text-[#FFF384]
                                                   easy-in group-hover:easy-out duration-300 transition-opacity">
                                         CARNETS
                                     </p>
