@@ -13,8 +13,8 @@ interface ThirdSectionProps {}
 const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
     return (
         <div className='w-screen flex justify-center bg-white'>
-            <div className='m-auto px-5 mt-[15rem] w-full min-w-[768px] max-w-[1200px]'>
-                <div className='block justify-right text-right text-black text-6xl font-light'>
+            <div className='m-auto px-5 mt-[8rem] lg:mt-[15rem] w-full min-w-[768px] max-w-[1200px]'>
+                <div className='block justify-right text-right text-black text-5xl lg:text-6xl font-light'>
                     <p className='font-bold'>DESDE EL PRIMER</p>
                     <p className='font-bold'>CONTACTO <a className="font-light">HASTA EL</a></p>
                     <p>ÚLTIMO DETALLE</p>

@@ -8,10 +8,10 @@ interface FifthSectionProps {}
 const FifthSection: React.FC<FifthSectionProps> = ({}) => {
     return (
         <div className='m-auto flex w-screen justify-center bg-white'>
-            <div className='mt-[10rem] px-5 m-auto min-w-[768px] max-w-[1200px]'>
+            <div className='mt-[8rem] lg:mt-[10rem] px-5 m-auto min-w-[768px] max-w-[1200px]'>
                 <div className='block'>
                     <div className="flex w-full">
-                        <div className="w-full lg:w-3/5 block text-6xl font-light text-black text-left">
+                        <div className="w-full lg:w-3/5 block text-5xl lg:text-6xl font-light text-black text-left">
                             <p className='font-bold'>EMPRESAS QUE</p>
                             <p className='font-bold'>HAN <a className='font-light'>CONFIADO</a></p>
                             <p>EN NOSOTROS</p>

@@ -15,7 +15,7 @@ const FooterInfo: React.FC<FooterInfoProps> = ({}) => {
             <div className="m-auto px-14 lg:px-5 block lg:flex p-[3rem] px-0 pb-0 relative w-screen min-w-[768px] max-w-[1200px]">
 
                 <div className="flex w-full lg:w-2/3">
-                    <div className="w-1/2 m-auto p-[9rem] py-0 lg:p-10 mr-2 pl-0 block text-black">
+                    <div className="w-1/2 m-auto p-[4.5rem] py-0 lg:p-10 mr-2 pl-0 block text-black">
                         <div><LazyLoadImage src={LogoWeLoveKits} /></div>
                     </div>
                     

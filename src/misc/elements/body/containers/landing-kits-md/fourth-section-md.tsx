@@ -13,13 +13,13 @@ interface FourthSectionProps {}
 const FourthSection: React.FC<FourthSectionProps> = ({}) => {
     return (
         <div className='m-auto w-screen flex justify-center bg-white'>
-            <div className='m-auto px-5 mt-[10rem] block lg:flex w-screen min-w-[768px] max-w-[1200px]'>
+            <div className='m-auto px-5 mt-[8rem] lg:mt-[10rem] block lg:flex w-screen min-w-[768px] max-w-[1200px]'>
 
-                <div className="w-full lg:w-6/12 block py-10 px-0 text-6xl text-black font-light">
+                <div className="w-full lg:w-6/12 block py-10 px-0 text-5xl lg:text-6xl text-black font-light">
                     <p className="font-bold">CADA KIT</p>
                     <p className="font-bold flex">ES UNA <a className="ml-3 font-light"> OBRA</a></p>
                     <p>DE ARTE</p>
-                    <p className="px-[30rem] lg:px-[20.5rem] lg:pl-0 mt-4 pl-0"><LazyLoadImage src={HeartText} /></p>
+                    <p className="px-[33rem] lg:px-[20.5rem] lg:pl-0 mt-4 pl-0"><LazyLoadImage src={HeartText} /></p>
                     <p className="invisible hidden lg:visible lg:flex px-[20rem] mt-6 pl-0"><LazyLoadImage src={HeartGirl} /></p>
                 </div>
 

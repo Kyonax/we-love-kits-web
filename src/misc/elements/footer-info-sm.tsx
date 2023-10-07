@@ -15,14 +15,14 @@ const FooterInfo: React.FC<FooterInfoProps> = ({}) => {
             <div className="m-auto px-5 lg:px-5 block lg:flex p-[3rem] px-0 pb-0 relative w-screen min-w-[0px] max-w-[768px]">
 
                 <div className="flex w-full lg:w-2/3">
-                    <div className="w-1/2 m-auto p-[9rem] py-0 lg:p-10 mr-2 pl-0 block text-black">
+                    <div className="m-auto sm:w-1/2 pl-16 sm:pl-0 flex px-16 lg:p-10 text-black">
                         <div><LazyLoadImage src={LogoWeLoveKits} /></div>
                     </div>
 
-                    <div className="flex w-1/2 pl-4 text-black">
+                    <div className="hidden sm:flex w-1/2 pl-4 text-black">
                         <div className="block m-auto p-2 space-y-2">
-                            <p className="font-bold text-[20px]">MENU</p>
-                            <div className="text-[14px] font-light space-y-2">
+                            <p className="font-bold text-[14px]">MENU</p>
+                            <div className="text-[12px] font-light space-y-2">
                                 <p className="cursor-pointer">KITS</p>
                                 <p className="cursor-pointer">CATEGORIAS</p>
                                 <p className="cursor-pointer">CLIENTES</p>
@@ -30,8 +30,8 @@ const FooterInfo: React.FC<FooterInfoProps> = ({}) => {
                             </div>
                         </div>
                         <div className="block m-auto p-2 space-y-2">
-                            <p className="font-bold text-[20px]">AYUDA</p>
-                            <div className="text-[14px] font-light space-y-2">
+                            <p className="font-bold text-[14px]">AYUDA</p>
+                            <div className="text-[12px] font-light space-y-2">
                                 <p className="cursor-pointer">TÉRMINOS Y CONDICIONES</p>
                                 <p className="cursor-pointer">POLÍTICA DE PRIVACIDAD </p>
                                 <p className="cursor-pointer">NOSOTROS</p>
@@ -42,42 +42,44 @@ const FooterInfo: React.FC<FooterInfoProps> = ({}) => {
                 </div>
 
                 <div className="w-full lg:w-1/3 flex text-[11px] mt-10 lg:text-[15px] lg:ml-10">
-                    <div className="m-auto mr-0 space-x-3 lg:space-x-0 lg:space-y-3 flex lg:block w-full justify-center">
-                        <button type='button' className='relative icon-style bg-[#4DFF8F] hover:bg-[#FFF384] flex text-black
-                                              hover:text-black py-[1.1rem] lg:py-4 px-11 lg:px-16 pr-[1.25rem] rounded-full border-none font-bold transition duration-700'>
-                            <p className="absolute left-2 lg:left-5 top-0 bottom-0 m-auto lg:py-1">
-                            <SocialIcon network="whatsapp" bgColor="none" style={{width: 40 }}/></p>
-                            <p className="ml-1 text-style">HABLEMOS</p>
-                        </button>
+                    <div className="m-auto mr-0 space-y-3 lg:space-x-0 lg:space-y-3 block lg:block w-full justify-center">
 
-
-                        <button type='button' className='relative icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
+                        <div className="flex">
+                            <button type='button' className='sm:m-auto sm:mr-3 relative icon-style bg-[#4DFF8F] hover:bg-[#FFF384] flex text-black
+                                          hover:text-black py-[1.1rem] lg:py-4 px-11 lg:px-16 pr-[1.25rem] rounded-full border-none font-bold transition duration-700'>
+                                <p className="absolute left-2 lg:left-5 top-0 bottom-0 m-auto lg:py-1">
+                                    <SocialIcon network="whatsapp" bgColor="none" style={{width: 40 }}/></p>
+                                    <p className="ml-1 text-style">HABLEMOS</p>
+                            </button>
+                            
+                            <div className="mx-auto mr-0 sm:mr-auto sm:ml-0 flex space-x-1 lg:space-x-[1.6rem]">
+                                <button type='button' className='relative icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
+                                              hover:text-black py-0 px-3 rounded-full border-none font-bold transition duration-700'>
+                                    <p className="left-5 top-0 bottom-0 m-auto ">
+                                        <SocialIcon network="instagram" bgColor="none" style={{ width: 30 }} /></p>
+                                </button>
+                                
+                                
+                                <button type='button' className='relative icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
+                                              hover:text-black py-0 px-3 rounded-full border-none font-bold transition duration-700'>
+                                    <p className="left-5 top-0 bottom-0 m-auto ">
+                                        <SocialIcon network="linkedin" bgColor="none" style={{  width: 30 }}/></p>
+                                </button>
+                                
+                                <button type='button' className='relative icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
+                                              hover:text-black py-0 px-3 rounded-full border-none font-bold transition duration-700'>
+                                    <p className="left-5 top-0 bottom-0 m-auto ">
+                                        <SocialIcon network="tiktok" bgColor="none" style={{  width: 30 }}/></p>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <button type='button' className='mx-auto relative icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
                                               hover:text-black py-[1.1rem] lg:py-4 px-12 lg:px-16 pr-[1.5rem] lg:pr-[2rem] rounded-full border-none font-bold transition duration-700'>
                             <EnvelopeIcon className="icons absolute w-[1.1rem] left-7 lg:w-6 lg:left-8 " />
-                            <p className="ml-1 text-style ">HOLA@WELOVEKITS.COM</p>
+                            <p className="ml-1 text-style">HOLA@WELOVEKITS.COM</p>
                         </button>
 
-                        <div className="flex space-x-3 lg:space-x-[1.6rem]">
-
-                        <button type='button' className='relative icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
-                                              hover:text-black py-0 px-4 rounded-full border-none font-bold transition duration-700'>
-                            <p className="left-5 top-0 bottom-0 m-auto ">
-                            <SocialIcon network="instagram" bgColor="none" style={{ width: 40 }} /></p>
-                        </button>
-
-
-                        <button type='button' className='relative icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
-                                              hover:text-black py-0 px-4 rounded-full border-none font-bold transition duration-700'>
-                            <p className="left-5 top-0 bottom-0 m-auto ">
-                            <SocialIcon network="linkedin" bgColor="none" style={{  width: 40 }}/></p>
-                        </button>
-
-                        <button type='button' className='relative icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
-                                              hover:text-black py-0 px-4 rounded-full border-none font-bold transition duration-700'>
-                            <p className="left-5 top-0 bottom-0 m-auto ">
-                            <SocialIcon network="tiktok" bgColor="none" style={{  width: 40 }}/></p>
-                        </button>
-                        </div>
                     </div>
 
                 </div>

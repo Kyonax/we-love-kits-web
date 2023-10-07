@@ -14,16 +14,16 @@ const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
     return (
         <div className='w-screen flex justify-center bg-white'>
             <div className='m-auto px-5 mt-[5rem] w-full min-w-[0px] max-w-[768px]'>
-                <div className='block justify-right text-right text-black text-3xl font-light'>
+                <div className='block justify-right text-right text-black text-3xl sm:text-5xl font-light'>
                     <p className='font-bold'>DESDE EL PRIMER</p>
                     <p className='font-bold'>CONTACTO <a className="font-light">HASTA EL</a></p>
                     <p>ÚLTIMO DETALLE</p>
                 </div>
 
                 <div className='w-full mt-16 font-bold'>
-                    <div className="blockjk lg:flex mb-4">
+                    <div className="blockjk lg:flex mb-4 text-[11px] sm:text-[14px]">
 
-                        <div className="block lg:w-2/4">
+                        <div className="block sm:flex lg:w-2/4">
                             <div style={{ backgroundImage: `url(${Mug})` }}  className="group h-[20rem] hover:cursor-pointer relative w-full lg:w-1/2 bg-cover bg-center rounded-2xl">
                                 <div className='absolute flex w-full justify-center bottom-8'>
                                     <button className='py-2 px-10 bg-black border-none text-white hover:bg-black hover:text-white rounded-full'>
@@ -34,7 +34,7 @@ const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
                                     </button>
                                 </div>
                             </div>
-                            <div style={{ backgroundImage: `url(${Caps})` }} className="group h-[20rem] hover:cursor-pointer relative w-full lg:w-1/2 mt-4 lg:mx-2 bg-cover bg-center rounded-2xl">
+                            <div style={{ backgroundImage: `url(${Caps})` }} className="group h-[20rem] hover:cursor-pointer relative w-full lg:w-1/2 mt-4 sm:mt-0 sm:ml-4 lg:mx-2 bg-cover bg-center rounded-2xl">
                                 <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer'>
                                     <button className='py-2 px-10 bg-black border-none text-white hover:bg-black hover:text-white rounded-full'>
                                         <p className="group-hover:text-[#FFF384]
@@ -57,7 +57,7 @@ const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
                             </div>
                         </div>
                     </div>
-                    <div className="block lg:flex mb-4">
+                    <div className="block lg:flex mb-4 text-[11px] sm:text-[14px]">
                         <div style={{ backgroundImage: `url(${Agenda})` }} className="group hover:cursor-pointer relative w-full lg:w-2/4 lg:mr-2 bg-cover bg-center rounded-2xl h-[20rem]">
                             <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer'>
                                 <button className='py-2 px-10 bg-black border-none text-white hover:bg-black hover:text-white rounded-full'>
@@ -69,7 +69,7 @@ const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
                             </div>
                         </div>
 
-                        <div className='block lg:w-2/4 mt-4 lg:mt-0'>
+                        <div className='block sm:flex lg:w-2/4 mt-4 lg:mt-0'>
                             <div style={{ backgroundImage: `url(${Lamy})` }} className="group hover:cursor-pointer relative flex w-full mr-2 lg:mx-2 bg-cover bg-center rounded-2xl h-[20rem]">
                                 <div className='absolute flex w-full justify-center bottom-8'>
                                     <button className='py-2 px-10 bg-black border-none text-white hover:bg-black hover:text-white rounded-full'>
@@ -80,7 +80,7 @@ const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
                                     </button>
                                 </div>
                             </div>
-                            <div style={{ backgroundImage: `url(${Thermos})` }} className="group hover:cursor-pointer relative w-full mt-4 bg-cover bg-center rounded-2xl h-[20rem]">
+                            <div style={{ backgroundImage: `url(${Thermos})` }} className="group hover:cursor-pointer relative w-full mt-4 sm:mt-0 sm:ml-2 bg-cover bg-center rounded-2xl h-[20rem]">
                                 <div className='absolute flex w-full justify-center bottom-8'>
                                     <button className='py-2 px-10 bg-black border-none text-white hover:bg-black hover:text-white rounded-full'>
                                         <p className="group-hover:text-[#FFF384]
@@ -94,7 +94,7 @@ const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
 
                     </div>
 
-                    <div className="block lg:flex mb-4">
+                    <div className="block lg:flex mb-4 text-[11px] sm:text-[14px]">
                         <div style={{ backgroundImage: `url(${Buttons})` }} className="group hover:cursor-pointer relative w-full lg:w-1/4 lg:mr-2 mt-4 lg:mt-0 bg-cover bg-center rounded-2xl h-[20rem]">
                             <div className='absolute flex w-full justify-center bottom-8'>
                                 <button className='py-2 px-10 bg-black border-none text-white hover:bg-black hover:text-white rounded-full'>
@@ -106,7 +106,7 @@ const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
                             </div>
                         </div>
 
-                        <div className="block lg:w-3/4 mt-4 lg:mt-0">
+                        <div className="block sm:flex lg:w-3/4 mt-4 lg:mt-0">
                             <div style={{ backgroundImage: `url(${Pin})` }} className="group hover:cursor-pointer relative flex w-full lg:w-2/3 mr-2 lg:mx-2 bg-cover bg-center rounded-2xl h-[20rem]">
                                 <div className='absolute flex w-full justify-center bottom-8'>
                                     <button className='py-2 px-10 bg-black border-none text-white hover:bg-black hover:text-white rounded-full'>
@@ -117,7 +117,7 @@ const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
                                     </button>
                                 </div>
                             </div>
-                            <div style={{ backgroundImage: `url(${Carnet})` }} className="group hover:cursor-pointer relative w-full lg:w-1/3 mt-4 bg-cover bg-center rounded-2xl h-[20rem]">
+                            <div style={{ backgroundImage: `url(${Carnet})` }} className="group hover:cursor-pointer relative w-full lg:w-1/3 mt-4 sm:mt-0 sm:ml-2 bg-cover bg-center rounded-2xl h-[20rem]">
                                 <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer'>
                                     <button className='py-2 px-10 bg-black border-none text-white hover:bg-black hover:text-white rounded-full'>
                                         <p className="group-hover:text-[#FFF384]

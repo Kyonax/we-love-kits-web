@@ -11,7 +11,7 @@ const SecondSection: React.FC<SecondSectionProps> = ({}) => {
                 <div className='flex'>
                     <div className="w-1/6" />
                     <div className="w-4/6 m-auto">
-                        <p className='text-3xl block font-bold text-center text-black'><a>Creamos Kits</a><br/><a>personalizados</a></p>
+                        <p className='text-3xl sm:text-4xl block font-bold text-center text-black'><a>Creamos Kits</a><br/><a>personalizados</a></p>
                     </div>
                     <div className="w-1/6" />
                 </div>

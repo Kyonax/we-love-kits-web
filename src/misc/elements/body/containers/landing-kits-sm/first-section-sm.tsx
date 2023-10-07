@@ -271,7 +271,7 @@ const FirstSection: React.FC<FirstSectionProps> = ({ innerPosition, windowSize }
                     <div className="flex w-full">
                         <div className="w-full relative block">
                             <div className="absolute w-full h-full">
-                                <canvas className="absolute left-0 w-full" ref={canvasRef} />
+                                <canvas className="absolute bottom-[-1.1rem] sm:bottom-[-1.5rem] left-0 w-full" ref={canvasRef} />
                             </div>
 
                             <div className={isCrash ? 'invisible' : 'invisible'}>

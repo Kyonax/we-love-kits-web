@@ -11,7 +11,7 @@ const SixthSection: React.FC<SixthSectionProps> = ({}) => {
         <div className='w-screen pb-[10rem] block lg:flex justify-center bg-white'>
 
             <div className="flex relative lg:absolute w-full h-full">
-                <div className="m-auto flex mt-[12rem] bg-[#7DE2FF] w-full h-[25rem]">
+                <div className="m-auto flex mt-[8rem] lg:mt-[12rem] bg-[#7DE2FF] w-full h-[25rem]">
                     <div className="m-auto px-16 flex w-screen min-w-[768pxj] max-w-[1200px]">
                     <div className="w-full lg:w-5/12 ml-0 m-auto flex p-16 pt-7 pl-0">
                         <div className="z-10 block">
