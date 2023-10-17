@@ -1,3 +1,5 @@
+import {useEffect, useRef, useState} from "react"
+
 import KitBienvenida from '../../../../assets/Kit-bienvenida.webp'
 import KitEventos from '../../../../assets/Kit-bienvenida.webp'
 import KitProyectos from '../../../../assets/Kit-bienvenida.webp'
@@ -8,9 +10,21 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import HeartText from '../../../../assets/hearts-text.webp'
 import HeartGirl from '../../../../assets/heart-girl.webp'
 
+import {motion, useInView, useAnimation} from "framer-motion";
+
 interface FourthSectionProps {}
 
 const FourthSection: React.FC<FourthSectionProps> = ({}) => {
+    const refText = useRef(null), refHearts = useRef(null), refGirl = useRef(null),
+          refCardOne = useRef(null), refCardTwo = useRef(null), refCardThree = useRef(null),
+          refCardFourth = useRef(null);
+
+    const isInViewText = useInView(refText), isInViewHearts = useInView(refHearts), isInViewGirl = useInView(refGirl),
+          isInViewCardOne = useInView(refCardOne), isInViewCardTwo = useInView(refCardTwo), isInViewCardThree = useInView(refCardThree),
+          isInViewCardFourth = useInView(refCardFourth);
+
+    const textControls = useAnimation(), heartsControls = useAnimation(), girControls = useAnimation();
+
     return (
         <div className='m-auto w-screen flex justify-center bg-white'>
             <div className='m-auto mt-[10rem] flex w-screen min-w-[1200px] max-w-[1200px]'>

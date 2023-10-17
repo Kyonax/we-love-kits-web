@@ -2,8 +2,6 @@ import { Route, Routes } from 'react-router-dom';
 import { useEffect, useState, useRef } from "react";
 import './App.css';
 
-import { Parallax, ParallaxLayer } from '@react-spring/parallax';
-
 import FooterInfo from '../elements/footer-info';
 import FooterInfoMD from '../elements/footer-info-md';
 import FooterInfoSM from '../elements/footer-info-sm';
@@ -97,11 +95,11 @@ function App() {
 
             <header> {navBarRender()} </header>
 
-            <Routes> <Route path='/testing-we-love-kits-v40-24fps' element={firstSectionRender()} /> </Routes>
+            <Routes> <Route path='/testing-we-love-kits-v42-24fps' element={firstSectionRender()} /> </Routes>
 
             <div className='text-white'>
                 <div>
-                    <Routes> <Route path='/testing-we-love-kits-v40-24fps' element={landingKitsRender()} /> </Routes>
+                    <Routes> <Route path='/testing-we-love-kits-v42-24fps' element={landingKitsRender()} /> </Routes>
                 </div>
             </div>
 

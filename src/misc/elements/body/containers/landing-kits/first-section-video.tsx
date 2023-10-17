@@ -2,6 +2,8 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { Link } from "react-router-dom";
 
+import {motion, useInView, useAnimation, useIsPresent} from "framer-motion";
+
 import "./sections.css";
 import { useEffect, useState, useRef } from "react";
 
@@ -48,7 +50,6 @@ const FirstSection: React.FC<FirstSectionProps> = ({ innerPosition }) => {
 
 
     async function fetchingImages(i: any) {
-        console.log(`Iterator: ${i}`);
         if (i === 197) {
             renderCanvas();
             setAlreadyPlayed(true)
@@ -57,7 +58,6 @@ const FirstSection: React.FC<FirstSectionProps> = ({ innerPosition }) => {
 
         const img = new Image();
         const imgSrc = require(`../../../../assets/landing-kits-sequence/${i}.webp`);
-        console.log(imgSrc);
         img.src = imgSrc;
         img.onload = async () => {
             setImages((prevImages) => [...prevImages, img]);
@@ -87,9 +87,11 @@ const FirstSection: React.FC<FirstSectionProps> = ({ innerPosition }) => {
             Math.floor(scrollFraction * frameCount)
         );
 
+        /***
           console.log(
               `Position: ${position} | MaxScroll: ${maxScroll} | ScrollFraction: ${scrollFraction} | FrameIndex: ${frameIndex}`
           );
+        ***/
     };
 
     const renderCanvas = () => {
@@ -269,7 +271,9 @@ const FirstSection: React.FC<FirstSectionProps> = ({ innerPosition }) => {
                 <div className="relative block w-full">
                     <div className="flex w-full">
                         <div className="w-full relative block">
-                            <div className="relative w-full h-full">
+                            <div
+
+                                className="relative w-full h-full">
                                 <canvas className="absolute left-0 w-full" ref={canvasRef} />
                             </div>
 

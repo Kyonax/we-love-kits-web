@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import disableScroll from 'disable-scroll';
 
 import './elements-css/nav-bar.css';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon, EnvelopeIcon } from '@heroicons/react/24/outline'
 import { SocialIcon } from 'react-social-icons'
 
 import LogoWeLoveKits from '../assets/WeLoveKits_Logo.webp';
@@ -15,6 +16,8 @@ interface NavBarProps {}
 const NavBar: React.FC<NavBarProps> = ({}) => {
     const [nav, setNav] = useState(false);
     const handleClick = () => setNav(!nav);
+
+    useEffect(() => {if(nav === true) {disableScroll.on()} else {disableScroll.off()}}, [nav])
 
     return (
         <div className='relative flex justify-center z-50'>
@@ -41,7 +44,7 @@ const NavBar: React.FC<NavBarProps> = ({}) => {
 
                                     <p className="absolute left-5 top-0 bottom-0 m-auto py-1">
                                         <SocialIcon network="whatsapp" bgColor="none"/></p>
-                                        <p className="ml-1 text-style opacity-[100%]">HABLEMOS</p>
+                                    <p className="ml-1 text-style opacity-[100%]">HABLEMOS</p>
                                 </button>
                             </li>
                         </ul>
@@ -53,12 +56,66 @@ const NavBar: React.FC<NavBarProps> = ({}) => {
                 </div>
 
                 <div className={!nav ? 'hidden' : 'absolute w-screen h-screen'}>
-                    <ul className={!nav ? 'hidden' : 'absolute mt-[12%] h-[93%] bg-white w-screen z-0'}>
-                        <li className='border-b-2 border-zinc-300 w-full text-black'>Categorias</li>
-                        <li className='border-b-2 border-zinc-300 w-full text-black'>Kits</li>
-                        <li className='border-b-2 border-zinc-300 w-full text-black'>Clientes</li>
-                        <li className='border-b-2 border-zinc-300 w-full text-black'>Contacto</li>
+                    <ul className={!nav ? 'hidden' : 'absolute h-[100%] px-5 space-y-[-2rem] pt-5 bg-[#AB94FF] w-screen z-10'}>
+                        <li>
+                            <div className="w-[5rem]">
+                                <LazyLoadImage
+                                    alt={'Logo We Love Kits - Made by Cabezarota'}
+                                    src={LogoWeLoveKits}
+                                />
+                            </div>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li className='text-2xl font-bold w-full text-white cursor-pointer'>CATEGORÍAS</li>
+                        <li className='text-2xl font-bold w-full text-white cursor-pointer'>KITS</li>
+                        <li className='text-2xl font-bold w-full text-white cursor-pointer'>CLIENTES</li>
+                        <li className='text-2xl font-bold w-full text-white cursor-pointer'>CONTACTO</li>
+                        <li></li>
+                        <li>
+
+                    <div className="m-auto mr-0 space-y-3 lg:space-x-0 lg:space-y-3 block lg:block w-full justify-center">
+
+                            <button type='button' className='mx-auto  relative icon-style bg-[#4DFF8F] hover:bg-[#FFF384] flex text-black
+                                          hover:text-black py-[1.1rem] lg:py-4 px-[60%] lg:px-16 pr-[1.25rem] rounded-full border-none font-bold transition duration-700'>
+                                <p className="absolute left-0 right-0 ml-[-6rem] lg:left-5 top-1 bottom-0 m-auto lg:py-1">
+                                    <SocialIcon network="whatsapp" bgColor="none" style={{width: 40 }}/>
+                                </p>
+                                    <p className="invisible text-style z-10">HABLEMOS</p>
+                                    <p className="absolute mr-[-2rem] left-0 right-0 mx-auto text-style z-10">HABLEMOS</p>
+                            </button>
+
+
+                        <div className="flex">
+                            <div className="mx-auto flex space-x-1 lg:space-x-[1.6rem]">
+                                <button type='button' className='relative icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
+                                              hover:text-black py-0 px-5 rounded-full border-none font-bold transition duration-700'>
+                                    <p className="left-5 top-0 bottom-0 m-auto ">
+                                        <SocialIcon network="instagram" bgColor="none" style={{ width: 30 }} /></p>
+                                </button>
+
+
+                                <button type='button' className='relative icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
+                                              hover:text-black py-0 px-5 rounded-full border-none font-bold transition duration-700'>
+                                    <p className="left-5 top-0 bottom-0 m-auto ">
+                                        <SocialIcon network="linkedin" bgColor="none" style={{  width: 30 }}/></p>
+                                </button>
+
+                                <button type='button' className='relative icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
+                                              hover:text-black py-0 px-5 rounded-full border-none font-bold transition duration-700'>
+                                    <p className="left-5 top-0 bottom-0 m-auto ">
+                                        <SocialIcon network="tiktok" bgColor="none" style={{  width: 30 }}/></p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                        </li>
                     </ul>
+
+
+                    <div className='lg:hidden hover:cursor-pointer absolute top-5 z-20 right-5' onClick={handleClick}>
+                        {!nav ? <Bars3Icon className={`w-6 text-white`} /> : <XMarkIcon className={`w-6 text-white`} />}
+                    </div>
                 </div>
 
             </div>
