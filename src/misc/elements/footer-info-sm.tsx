@@ -44,7 +44,7 @@ const FooterInfo: React.FC<FooterInfoProps> = ({}) => {
                 <div className="w-full lg:w-1/3 flex text-[11px] mt-5 lg:text-[15px] lg:ml-10">
                     <div className="m-auto mr-0 space-y-3 lg:space-x-0 lg:space-y-3 block lg:block w-full justify-center">
 
-                            <button type='button' className='mx-auto  relative icon-style bg-[#4DFF8F] hover:bg-[#FFF384] flex text-black
+                            <button type='button' className='mx-auto w-[82%] relative icon-style bg-[#4DFF8F] hover:bg-[#FFF384] flex text-black
                                           hover:text-black py-[1.1rem] lg:py-4 px-[70%] lg:px-16 pr-[1.25rem] rounded-full border-none font-bold transition duration-700'>
                                 <p className="absolute left-0 right-0 ml-[-5rem] lg:left-5 top-[0.2rem] bottom-0 m-auto lg:py-1">
                                     <SocialIcon network="whatsapp" bgColor="none" style={{width: 40 }}/>
@@ -53,7 +53,7 @@ const FooterInfo: React.FC<FooterInfoProps> = ({}) => {
                                     <p className="absolute mr-[-2rem] left-0 right-0 mx-auto text-style text-[0.9rem] z-10">HABLEMOS</p>
                             </button>
 
-                        <button type='button' className='mx-auto relative icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
+                        <button type='button' className='mx-auto w-[82%] relative icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
                                               hover:text-black py-[1.1rem] lg:py-4 px-[70%] lg:px-16 pr-[1.5rem] lg:pr-[2rem] rounded-full border-none font-bold transition duration-700'>
                             <p className="absolute left-0 right-0 mx-auto ml-[-8.2rem]"> <EnvelopeIcon className="icons mx-auto w-[1.2rem] lg:w-6 lg:left-8 " /></p>
                             
@@ -62,21 +62,21 @@ const FooterInfo: React.FC<FooterInfoProps> = ({}) => {
                         </button>
 
                         <div className="flex">
-                            <div className="mx-auto flex space-x-1 lg:space-x-[1.6rem]">
-                                <button type='button' className='relative icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
+                            <div className="mx-auto flex w-[82%] space-x-1 lg:space-x-[1.6rem]">
+                                <button type='button' className='relative w-1/3 icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
                                               hover:text-black py-0 px-5 rounded-full border-none font-bold transition duration-700'>
                                     <p className="left-5 top-0 bottom-0 m-auto ">
                                         <SocialIcon network="instagram" bgColor="none" style={{ width: 30 }} /></p>
                                 </button>
 
 
-                                <button type='button' className='relative icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
+                                <button type='button' className='relative w-1/3 icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
                                               hover:text-black py-0 px-5 rounded-full border-none font-bold transition duration-700'>
                                     <p className="left-5 top-0 bottom-0 m-auto ">
                                         <SocialIcon network="linkedin" bgColor="none" style={{  width: 30 }}/></p>
                                 </button>
 
-                                <button type='button' className='relative icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
+                                <button type='button' className='relative w-1/3 icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
                                               hover:text-black py-0 px-5 rounded-full border-none font-bold transition duration-700'>
                                     <p className="left-5 top-0 bottom-0 m-auto ">
                                         <SocialIcon network="tiktok" bgColor="none" style={{  width: 30 }}/></p>

@@ -1,12 +1,40 @@
+import {useEffect, useRef, useState} from "react"
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import Character from '../../../../assets/character-down.webp'
 
 import '../landing-kits/sections.css';
 
+import {motion, useInView, useAnimation} from "framer-motion";
 interface SixthSectionProps {}
 
 const SixthSection: React.FC<SixthSectionProps> = ({}) => {
+    const refTitle = useRef(null), refParragraph = useRef(null), refLogo = useRef(null),
+          refBlock = useRef(null), refContent = useRef(null);
+
+    const isInViewTitle = useInView(refTitle), isInViewParragraph = useInView(refParragraph),
+          isInViewLogo = useInView(refLogo), isInViewBlock = useInView(refBlock), isInViewContent = useInView(refContent);
+
+    const titleControls = useAnimation(), parragraphControls = useAnimation(), logoControls = useAnimation(),
+          blockControls = useAnimation(), contentControls = useAnimation();
+
+    useEffect(() => {
+        if (isInViewTitle) titleControls.start("visible");
+            else titleControls.start("hidden");
+
+        if (isInViewParragraph) parragraphControls.start("visible");
+            else parragraphControls.start("hidden");
+
+        if (isInViewLogo) logoControls.start("visible");
+            else logoControls.start("hidden");
+
+        if (isInViewBlock) blockControls.start("visible");
+            else blockControls.start("hidden");
+
+        if (isInViewContent) contentControls.start("visible");
+            else contentControls.start("hidden");
+
+    }, [isInViewTitle, isInViewParragraph, isInViewLogo, isInViewBlock, isInViewContent])
     return (
         <div className='w-screen pb-[5rem] block lg:flex justify-center bg-white'>
 
@@ -15,22 +43,69 @@ const SixthSection: React.FC<SixthSectionProps> = ({}) => {
                     <div className="m-auto pl-5 flex w-screen min-w-[0px] max-w-[768px]">
                     <div className="w-full lg:w-5/12 ml-0 m-auto flex p-5 pt-0 pl-0">
                         <div className="z-10 block">
-                            <p className="font-black text-4xl sm:text-5xl text-black">HAGAMOS ALGO INCREIBLE JUNTOS</p>
-                            <p className="text-[#002538] font-light text-[1rem] sm:text-[1.1rem]">
+                            <motion.p
+
+                                variants={{
+                                    hidden: {opacity: 0, x: -75},
+                                    visible: {opacity: 1, x: 0}
+                                }}
+                                initial="hidden"
+                                animate={titleControls}
+                                transition={{duration: 0.75, delay: 0.25}}
+                                className="font-black text-4xl sm:text-5xl text-black" ref={refTitle}>HAGAMOS ALGO INCREIBLE JUNTOS</motion.p>
+                            <motion.p
+
+                                variants={{
+                                    hidden: {opacity: 0, x: -75},
+                                    visible: {opacity: 1, x: 0}
+                                }}
+                                initial="hidden"
+                                animate={parragraphControls}
+                                transition={{duration: 0.75, delay: 0.50}}
+                                className="text-[#002538] font-light text-[1rem] sm:text-[1.1rem]" ref={refParragraph}>
                                 Eleva tu marca a traves de kits que no solo entregan productos, sino que te sumergen en una experiencia.
-                            </p>
+                            </motion.p>
                         </div>
                     </div>
                     </div>
                 </div>
             </div>
 
-            <div className='mt-[-3rem] lg:mt-[10rem] px-5 lg:px-5 m-auto flex w-screen min-w-[0px] max-w-[768px]'>
-                <div className="w-full flex">
+            <motion.div
+
+                variants={{
+                    hidden: {opacity: 0, y: 75},
+                    visible: {opacity: 1, y: 0}
+                }}
+                initial="hidden"
+                animate={blockControls}
+                transition={{duration: 0.75, delay: 0.50}}
+                className='mt-[-3rem] lg:mt-[10rem] px-5 lg:px-5 m-auto flex w-screen min-w-[0px] max-w-[768px]' ref={refBlock}>
+                <motion.div
+
+                    variants={{
+                        hidden: {opacity: 0},
+                        visible: {opacity: 1}
+                    }}
+                    initial="hidden"
+                    animate={contentControls}
+                    transition={{duration: 0.75, delay: 0.50}}
+
+                    className="w-full flex" ref={refContent}>
                     <div className="hidden lg:flex w-6/12 h-[50rem] relative flex z-10">
-                        <div className='absolute ml-auto mr-auto px-16 bottom-0'>
-                        <LazyLoadImage src={Character} />
-                        </div>
+                        <motion.div
+
+                            variants={{
+                                hidden: {opacity: 0},
+                                visible: {opacity: 1}
+                            }}
+                            initial="hidden"
+                            animate={logoControls}
+                            transition={{duration: 0.75, delay: 1}}
+
+                            className='absolute ml-auto mr-auto px-16 bottom-0' ref={refLogo}>
+                            <LazyLoadImage src={Character} />
+                        </motion.div>
                     </div>
                     <div className="w-full lg:w-6/12 bg-white flex rounded-xl border border-[#002538] p-5 py-10 text-[#002538] text-[1rem] sm:text-[1.1rem] z-10">
                         <div className='m-auto ml-0 mr-0 w-full'>
@@ -69,8 +144,8 @@ const SixthSection: React.FC<SixthSectionProps> = ({}) => {
                         </button>
                         </div>
                     </div>
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
         </div>
     )
 }
