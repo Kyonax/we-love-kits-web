@@ -1,5 +1,6 @@
 import {useEffect, useRef, useState} from "react"
 
+import disableScroll from 'disable-scroll';
 import Agenda from '../../../../assets/Agenda.webp'
 import Carnet from '../../../../assets/Carnet.webp'
 import Camisa from '../../../../assets/Camisas.webp'
@@ -10,11 +11,15 @@ import Buttons from '../../../../assets/Button.webp'
 import Caps from '../../../../assets/Cap.webp'
 import Thermos from '../../../../assets/thermo.webp'
 
+import Modal from '../../../items/modal';
+
 import {motion, useInView, useAnimation} from "framer-motion";
 
 interface ThirdSectionProps {}
 
 const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
+    const [isModal, setIsModal] = useState(false), [whichCard, setWhichCard] = useState(0);
+
     const refText = useRef(null);
 
     const refBlockFirst = useRef(null), refBlockSecond = useRef(null), refBlockThird = useRef(null),
@@ -71,10 +76,21 @@ const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
         isInViewBFourth, isInViewBFifth, isInViewBSixth, isInViewBSeventh,
         isInViewBEigth, isInViewBNineth]);
 
+    useEffect(() => {
+        const BackElements = document.querySelectorAll('[id=to-blur]');
 
+        BackElements.forEach(element => {
+            if (isModal) {element?.classList.add('blur-class'); disableScroll.on()}
+                else {element?.classList.remove('blur-class'); disableScroll.off()}
+        } );
+
+    }, [isModal]);
+
+    
     return (
         <div className='w-screen flex justify-center bg-white'>
-            <div className='m-auto mt-[15rem] min-w-[1200px] max-w-[1200px]'>
+            <div className={isModal ? 'flex' : 'hidden'}><Modal number_of_card={whichCard} is_showing={isModal} setIsShowing={setIsModal}/></div>
+            <div id="to-blur" className='m-auto mt-[15rem] min-w-[1200px] max-w-[1200px]'>
                 <motion.div
 
                    variants={{
@@ -105,6 +121,8 @@ const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
                             whileHover={{ scale: [null, 1.02, 1.02] }}
                             transition={{duration: 0.3, delay: 0.0}}
 
+                            onClick={event => {setIsModal(true); setWhichCard(1)}}
+                            
                             style={{ backgroundImage: `url(${Mug})` }} className="relative group cursor-pointer w-1/4 mr-2 bg-cover bg-center rounded-2xl h-full" ref={refBlockFirst}>
                             <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer' >
                                 <button className='py-2 px-10 bg-black border-none text-white hover:bg-black hover:text-white rounded-full'>
@@ -127,6 +145,9 @@ const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
                             whileHover={{ scale: [null, 1.02, 1.02] }}
                             transition={{duration: 0.3, delay: 0.0}}
 
+
+                            onClick={event => {setIsModal(true); setWhichCard(2)}}
+
                             style={{ backgroundImage: `url(${Caps})` }} className="relative group cursor-pointer w-1/4 mx-2 bg-cover bg-center rounded-2xl h-full" ref={refBlockSecond}>
                             <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer'>
                                 <button className='py-2 px-10 bg-black border-none text-white hover:bg-black hover:text-white rounded-full'>
@@ -148,6 +169,8 @@ const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
 
                             whileHover={{ scale: [null, 1.02, 1.02] }}
                             transition={{duration: 0.3, delay: 0.0}}
+
+                            onClick={event => {setIsModal(true); setWhichCard(3)}}
 
                             style={{ backgroundImage: `url(${Camisa})` }} className="relative group cursor-pointer w-2/4 ml-2 bg-cover bg-center rounded-2xl h-full" ref={refBlockThird}>
                             <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer'>
@@ -174,6 +197,8 @@ const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
                             whileHover={{ scale: [null, 1.02, 1.02] }}
                             transition={{duration: 0.3, delay: 0.0}}
 
+                            onClick={event => {setIsModal(true); setWhichCard(4)}}
+
                             style={{ backgroundImage: `url(${Agenda})` }} className="relative group cursor-pointer w-2/4 mr-2 bg-cover bg-center rounded-2xl h-full" ref={refBlockFourth}>
                             <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer'>
                                 <button className='py-2 px-10 bg-black border-none text-white hover:bg-black hover:text-white rounded-full'>
@@ -197,6 +222,8 @@ const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
                             whileHover={{ scale: [null, 1.02, 1.02] }}
                             transition={{duration: 0.3, delay: 0.0}}
 
+                            onClick={event => {setIsModal(true); setWhichCard(5)}}
+
                             style={{ backgroundImage: `url(${Lamy})` }} className="relative flex group cursor-pointer w-1/4 mx-2 bg-cover bg-center rounded-2xl h-full" ref={refBlockFifth}>
                             <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer'>
                                 <button className='py-2 px-10 bg-black border-none text-white hover:bg-black hover:text-white rounded-full'>
@@ -219,6 +246,8 @@ const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
 
                             whileHover={{ scale: [null, 1.02, 1.02] }}
                             transition={{duration: 0.3, delay: 0.0}}
+
+                            onClick={event => {setIsModal(true); setWhichCard(6)}}
 
                             style={{ backgroundImage: `url(${Thermos})` }} className="relative group cursor-pointer w-1/4 ml-2 bg-cover bg-center rounded-2xl h-full" ref={refBlockSixth}>
                             <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer'>
@@ -246,6 +275,8 @@ const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
                             whileHover={{ scale: [null, 1.02, 1.02] }}
                             transition={{duration: 0.3, delay: 0.0}}
 
+                            onClick={event => {setIsModal(true); setWhichCard(7)}}
+
                             style={{ backgroundImage: `url(${Buttons})` }} className="relative group cursor-pointer w-1/4 mr-2 bg-cover bg-center rounded-2xl h-full" ref={refBlockSeventh}>
                             <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer'>
                                 <button className='py-2 px-10 bg-black border-none text-white hover:bg-black hover:text-white rounded-full'>
@@ -269,6 +300,8 @@ const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
                             whileHover={{ scale: [null, 1.02, 1.02] }}
                             transition={{duration: 0.3, delay: 0.0}}
 
+                            onClick={event => {setIsModal(true); setWhichCard(8)}}
+
                             style={{ backgroundImage: `url(${Pin})` }} className="relative flex group cursor-pointer w-2/4 mx-2 bg-cover bg-center rounded-2xl h-full" ref={refBlockEight}>
                             <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer'>
                                 <button className='py-2 px-10 bg-black border-none text-white hover:bg-black hover:text-white rounded-full'>
@@ -291,6 +324,8 @@ const ThirdSection: React.FC<ThirdSectionProps> = ({}) => {
 
                             whileHover={{ scale: [null, 1.02, 1.02] }}
                             transition={{duration: 0.3, delay: 0.0}}
+
+                            onClick={event => {setIsModal(true); setWhichCard(9)}}
 
                             style={{ backgroundImage: `url(${Carnet})` }} className="relative group cursor-pointer w-1/4 ml-2 bg-cover bg-center rounded-2xl h-full" ref={refBlockNineth}>
                             <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer'>

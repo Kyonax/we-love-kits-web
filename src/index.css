@@ -2,6 +2,10 @@
   background-color: #AB94FF;
 }
 
+.blur-class {
+  filter: blur(5px);
+}
+
 body {
   margin: 0;
   font-family: "Prompt", "Segoe UI", "Roboto", "Oxygen",

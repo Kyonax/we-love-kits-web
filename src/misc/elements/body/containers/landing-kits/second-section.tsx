@@ -27,7 +27,7 @@ const SecondSection: React.FC<SecondSectionProps> = ({}) => {
 
     return (
         <div className='relative flex justify-center bg-white'>
-            <div className='block mt-[10rem] w-screen min-w-[1200px] max-w-[1200px]'>
+            <div  id="to-blur" className='block mt-[10rem] w-screen min-w-[1200px] max-w-[1200px]'>
                 <div className='flex'>
                     <div className="w-1/6" />
                     <motion.div ref={ref}
