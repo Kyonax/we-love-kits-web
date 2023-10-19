@@ -95,11 +95,11 @@ function App() {
 
             <header> {navBarRender()} </header>
 
-            <Routes> <Route path='/testing-we-love-kits-v45-24fps' element={firstSectionRender()} /> </Routes>
+            <Routes> <Route path='/testing-we-love-kits-v46-24fps' element={firstSectionRender()} /> </Routes>
 
             <div className='text-white'>
                 <div>
-                    <Routes> <Route path='/testing-we-love-kits-v45-24fps' element={landingKitsRender()} /> </Routes>
+                    <Routes> <Route path='/testing-we-love-kits-v46-24fps' element={landingKitsRender()} /> </Routes>
                 </div>
             </div>
 
