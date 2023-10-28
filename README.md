@@ -23,24 +23,32 @@ customers." src="github/light.png">
 All the code is documented with the mission to be a easy to **edit and easy to use** website. (The Docs were writed on English and using .ORG Files)
 
 <table>
-<tr><th>Project Technologies</th> <th>Main Language</th></tr>
+<tr><th>Project Technologies</th> <th>Languages & Markdown</th> <th>Important Commands</th></tr>
 <tr><td>
 
-| Install all with Bun |
-|----------------------|
-| NextJS v14.0         |
-| React v18*           |
-| Tailwind CSS         |
-| Bun v1.0.7           |
-| npm v10.2.0          |
-| node v18.18.0        |
+| NextJS v14.0  |
+|---------------|
+| React v18*    |
+| Tailwind CSS  |
+| Bun v1.0.7    |
+| npm v10.2.0   |
+| node v18.18.0 |
 
 </td>
 
 <td>
 
-| SSR NextJS Preloading |
-|-----------------------|
-| TypeScript            |
+| TypeScript |
+|------------|
+| ORG & MD   |
+
+</td>
+
+<td>
+
+| bun install | install dependencies |
+|-------------|----------------------|
+| bun dev     | run project in local |
+| bun build   | build project        |
 
 </td></tr> </table>
