@@ -30,7 +30,7 @@ All the code is documented with the mission to be a easy to **edit and easy to u
 | Bun v1.0.7           |
 | npm v10.2.0          |
 | node v18.18.0        |
-|----------------------|
+
 | Website Language     |
 |----------------------|
 | TypeScript           |
