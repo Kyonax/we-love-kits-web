@@ -11,5 +11,4 @@ export default function NavBarComponent() {
     const handleClick = () => setNav(!nav);
 
     return( <> </> )
-
 }
