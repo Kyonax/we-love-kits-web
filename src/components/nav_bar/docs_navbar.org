@@ -7,6 +7,7 @@ This DOC file has all the code and explanation of it, follow the Descriptions to
 * Table of Contents :toc:
 - [[#tsx-component][TSX Component]]
   - [[#default-function][Default Function]]
+  - [[#state-variables][State Variables]]
 
 * TSX Component
 The NavBar Component will be our navigation tool in the Landing page, we need to import some app dependencies:
@@ -39,7 +40,7 @@ export default function NavBarComponent() {
     const handleClick = () => setNav(!nav);
 #+END_SRC
 
-*** State Variables
+** State Variables
 This ~state variable~ and ~function variable (handleClick)~ are the Triggereds of the navbar in the mobile version. Mobile version goes from ~300px~ to ~768px~.
 
 #+BEGIN_SRC typescript :tangle no
