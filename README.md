@@ -22,8 +22,8 @@ customers." src="github/light.png">
 # Code Docs
 All the code is documented with the mission to be a easy to **edit and easy to use** website. (The Docs were writed on English and using .ORG Files)
 
-<table>
-<tr><th>Project Technologies</th> <th>Languages & Markdown</th> <th>Important Commands</th></tr>
+<table align="center">
+<tr><th>Project Technologies</th> <th>Language & DOCS</th> <th>Important Commands</th></tr>
 <tr><td align="center">
 
 | NextJS v14.0  |
@@ -40,7 +40,8 @@ All the code is documented with the mission to be a easy to **edit and easy to u
 
 | TypeScript |
 |:----------:|
-| ORG & MD   |
+| ORG Files  |
+| Markdown   |
 
 </td>
 
