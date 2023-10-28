@@ -42,7 +42,7 @@ export default function NavBarComponent() {
     const handleClick = () => setNav(!nav);
 #+END_SRC
 
-This ~state variable~ and ~function variable (handleClick)~ are the Triggereds of the navbar in the mobile version. Mobile version goes from ~300px~ to ~768px~.
+The ~state variable~ and ~function variable (handleClick)~ are the Triggereds of the navbar in the mobile version. Mobile version goes from ~300px~ to ~768px~.
 
 #+BEGIN_SRC typescript :tangle no
 const [nav, setNav] = useState(false);
