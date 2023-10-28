@@ -1,74 +1,9 @@
-.contact-form button {
-  @apply text-[#002538] bg-transparent rounded-xl font-bold transition duration-700
-    hover:bg-[#4DFF8F] hover:rounded-xl;
+.container {
+    @apply relative left-0 right-0 mx-auto flex justify-center bg-white
 }
 
-.transition-every {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, text-stroke, -webkit-text-stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 300ms;
-  transition-duration: 700ms;
-
-  @apply mt-[-2rem] sm:mt-0 sm:pt-5
-}
-
-.text-stroke {
-  z-index: 10;
-}
-
-.text-base-arte {
-  @apply m-auto right-0 left-0 text-[29rem] mt-0 absolute font-black
-}
-
-.text-base-arte p {
-  @apply m-auto right-0 left-0 text-[7.41rem] mt-[-13.5rem] absolute font-black
-}
-
-.text-base-amor {
-  @apply m-auto right-0 left-0 text-[24.6rem] mt-[1.5rem] absolute font-black
-}
-
-.text-base-amor p {
-  @apply m-auto right-0 left-0 text-[8.16rem] mt-[-12rem] absolute font-black
-}
-
-.text-base-kits {
-  @apply m-auto right-0 left-0 text-[30rem] mt-[-6rem] absolute font-black
-}
-
-.text-base-kits p {
-  @apply m-auto right-0 left-0 text-[15.5rem] mt-[-13rem] absolute font-black
-}
-
-.text-base-design {
-  @apply m-auto right-0 left-0 text-[20.65rem] mt-[3.1rem] absolute font-black
-}
-
-.text-base-design p {
-  @apply m-auto right-0 left-0 text-[8.16rem] mt-[-10rem] absolute font-black
-}
-
-.text-base-usables {
-  @apply m-auto right-0 left-0 text-[23rem] mt-[-2rem] absolute font-black
-}
-
-.text-base-usables p {
-  @apply m-auto right-0 left-0 text-[23rem] mt-[-15.5rem] absolute font-black
-}
-
-.text-base-xp {
-  @apply m-auto right-0 left-0 text-[21.9rem] mt-[2.7rem] absolute font-black
-}
-
-.text-base-xp p {
-  @apply m-auto right-0 left-0 text-[8.15rem] mt-[-10rem] absolute font-black
+.container-inner {
+    @apply block mt-[5rem] min-w-[0px] max-w-[768px] px-2 md:px-3
+        md:mt-[8rem] md:min-w-[768px] md:max-w-[1200px]
+        xl:mt-[10rem] xl:min-w-[1200px] xl:max-w-[1200px]
 }

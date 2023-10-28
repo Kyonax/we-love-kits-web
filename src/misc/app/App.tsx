@@ -73,10 +73,10 @@ function App() {
 
     const landingKitsRender = () => {
         switch (true) {
-                case (windowSize.width > 1200): return <LandingKits innerPosition={innerPosition}/>
-                case (windowSize.width <= 1200 && windowSize.width > 768): return <LandingKitsMD innerPosition={innerPosition}/>
-                case (windowSize.width <= 768): return <LandingKitsSM innerPosition={innerPosition}/>
-            default: return <LandingKits innerPosition={innerPosition}/>
+                case (windowSize.width > 1200): return <LandingKits windowSize={windowSize}/>
+                case (windowSize.width <= 1200 && windowSize.width > 768): return <LandingKitsMD windowSize={windowSize}/>
+                case (windowSize.width <= 768): return <LandingKitsSM windowSize={windowSize}/>
+            default: return <LandingKits windowSize={windowSize} />
         }
     }
 
@@ -97,7 +97,7 @@ function App() {
 
             <Routes> <Route path='/testing-we-love-kits-v49-24fps' element={firstSectionRender()} /> </Routes>
 
-            <div className='text-white'>
+            <div className='text-white bg-white'>
                 <div>
                     <Routes> <Route path='/testing-we-love-kits-v49-24fps' element={landingKitsRender()} /> </Routes>
                 </div>

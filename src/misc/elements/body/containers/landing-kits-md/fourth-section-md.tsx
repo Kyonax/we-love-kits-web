@@ -52,7 +52,7 @@ const FourthSection: React.FC<FourthSectionProps> = ({}) => {
     }, [isInViewText, isInViewHearts, isInViewGirl, isInViewCardOne, isInViewCardTwo, isInViewCardThree, isInViewCardFourth])
     return (
         <div className='m-auto w-screen flex justify-center bg-white'>
-            <div className='m-auto px-5 mt-[8rem] lg:mt-[10rem] block lg:flex w-screen min-w-[768px] max-w-[1200px]'>
+            <div id="to-blur" className='m-auto px-5 mt-[8rem] lg:mt-[10rem] block lg:flex w-screen min-w-[768px] max-w-[1200px]'>
 
                 <div className="w-full lg:w-6/12 block py-10 px-0 text-5xl lg:text-6xl text-black font-light">
                     <motion.div

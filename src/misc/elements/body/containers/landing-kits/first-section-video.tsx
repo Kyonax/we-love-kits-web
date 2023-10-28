@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import {motion, useInView, useAnimation, useIsPresent} from "framer-motion";
 
-import "./sections.css";
+import "./letters-first-section.css";
 import { useEffect, useState, useRef } from "react";
 
 import ARTE_LETTER from '../../../../assets/banner-letters/ARTE_LETTER.webp';

@@ -3,52 +3,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import {motion, useInView, useAnimation, useIsPresent} from "framer-motion";
 
-import './modal.css';
-
-import AgendaFirst from '../../assets/modal-images/1_Agenda.webp';
-import AgendaSecond from '../../assets/modal-images/2_Agenda.webp';
-import AgendaThird from '../../assets/modal-images/3_Agenda.webp';
-import AgendaFourth from '../../assets/modal-images/4_Agenda.webp';
-
-import MugFirst from '../../assets/modal-images/1_Mug.webp'
-import MugSecond from '../../assets/modal-images/2_Mug.webp'
-import MugThird from '../../assets/modal-images/3_Mug.webp'
-import MugFourth from '../../assets/modal-images/4_Mug.webp'
-
-import ButtonFirst from '../../assets/modal-images/1_Button.webp'
-import ButtonSecond from '../../assets/modal-images/2_Button.webp'
-import ButtonThird from '../../assets/modal-images/3_Button.webp'
-import ButtonFourth from '../../assets/modal-images/4_Button.webp'
-
-import CamisasFirst from '../../assets/modal-images/1_Camisas.webp'
-import CamisasSecond from '../../assets/modal-images/2_Camisas.webp'
-import CamisasThird from '../../assets/modal-images/3_Camisas.webp'
-import CamisasFourth from '../../assets/modal-images/4_Camisas.webp'
-
-import CapFirst from '../../assets/modal-images/1_Cap.webp'
-import CapSecond from '../../assets/modal-images/2_Cap.webp'
-import CapThird from '../../assets/modal-images/3_Cap.webp'
-import CapFourth from '../../assets/modal-images/4_Cap.webp'
-
-import CarnetFirst from '../../assets/modal-images/1_Carnet.webp'
-import CarnetSecond from '../../assets/modal-images/2_Carnet.webp'
-import CarnetThird from '../../assets/modal-images/3_Carnet.webp'
-import CarnetFourth from '../../assets/modal-images/4_Carnet.webp'
-
-import LamyFirst from '../../assets/modal-images/1_Lamy.webp'
-import LamySecond from '../../assets/modal-images/2_Lamy.webp'
-import LamyThird from '../../assets/modal-images/3_Lamy.webp'
-import LamyFourth from '../../assets/modal-images/4_Lamy.webp'
-
-import PinFirst from '../../assets/modal-images/1_Pin.webp'
-import PinSecond from '../../assets/modal-images/2_Pin.webp'
-import PinThird from '../../assets/modal-images/3_Pin.webp'
-import PinFourth from '../../assets/modal-images/4_Pin.webp'
-
-import ThermoFirst from '../../assets/modal-images/1_Thermo.webp'
-import ThermoSecond from '../../assets/modal-images/2_Thermo.webp'
-import ThermoThird from '../../assets/modal-images/3_Thermo.webp'
-import ThermoFourth from '../../assets/modal-images/4_Thermo.webp'
+import './modal-kits.css';
 
 interface ModalSectionProps {
     number_of_card: number,
@@ -84,7 +39,7 @@ const ModalSection: React.FC<ModalSectionProps> = ({number_of_card, is_showing, 
             case 0:
                 setBigPicture(actualBigPosition)
                 break;
-    
+
             case 1:
                 setSmallPictureOne(actualBigPosition)
                 break;
@@ -97,7 +52,7 @@ const ModalSection: React.FC<ModalSectionProps> = ({number_of_card, is_showing, 
                 setSmallPictureThree(actualBigPosition)
                 break;
         }
-    
+
     }
 
     useEffect(() => {

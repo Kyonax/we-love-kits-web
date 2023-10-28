@@ -13,13 +13,13 @@ import SixthSection from "./containers/landing-kits-md/sixth-section-md";
 import FooterInfo from "../footer-info";
 
 interface LandingKitsProps {
-    innerPosition: any;
+    windowSize: any;
 }
 
-const LandingKits: React.FC<LandingKitsProps> = ({ innerPosition }) => {
+const LandingKits: React.FC<LandingKitsProps> = ({ windowSize }) => {
     return (
         <div>
-            <SecondSection />
+            <SecondSection windowSize={windowSize} />
 
             <ThirdSection />
 
