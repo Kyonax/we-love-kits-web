@@ -6,14 +6,14 @@ This DOC file has all the code and explanation of it, follow the Descriptions to
 
 * Table of Contents :toc:
 - [[#tsx-component][TSX Component]]
-  - [[#imports-for-component][Imports for Component]]
-  - [[#default-function][Default Function]]
-  - [[#state-variables][State Variables]]
+  - [[#imports][Imports]]
+  - [[#state-variables--functions][State Variables & Functions]]
+  - [[#end-of-code][End of Code]]
 
 * TSX Component
 The NavBar Component will be our navigation tool in the Landing page ~path: we-love-kits/src/components/nav_bar~
 
-** Imports for Component
+** Imports
 #+BEGIN_SRC typescript :tangle ./component.tsx
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
@@ -32,7 +32,7 @@ Import CSS Styles for the NavBar:
 import './nav_bar.css';
 #+END_SRC
 
-** Default Function
+** State Variables & Functions
 
 This is our default function of the NavBar Component, scripts and backend code will be writed before the ~return~ (the rendering process):
 
@@ -42,7 +42,6 @@ export default function NavBarComponent() {
     const handleClick = () => setNav(!nav);
 #+END_SRC
 
-** State Variables
 This ~state variable~ and ~function variable (handleClick)~ are the Triggereds of the navbar in the mobile version. Mobile version goes from ~300px~ to ~768px~.
 
 #+BEGIN_SRC typescript :tangle no
@@ -50,6 +49,7 @@ const [nav, setNav] = useState(false);
 const handleClick = () => setNav(!nav);
 #+END_SRC
 
+** End of Code
 
 #+BEGIN_SRC typescript :tangle ./component.tsx
     return( <> </> )
