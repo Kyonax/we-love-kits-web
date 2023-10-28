@@ -18,3 +18,19 @@ customers." src="github/light.png">
     </picture>
   </a>
 </p>
+
+# Code Documentation
+All the code is documented with the mission to be a easy to **edit and easy to use** website. (The Documentation was writed on English and using .ORG Files)
+
+| Website Technologies |
+|----------------------|
+| NextJS v14.0         |
+| React v18*           |
+| Tailwind CSS         |
+| Bun v1.0.7           |
+| npm v10.2.0          |
+| node v18.18.0        |
+|----------------------|
+| Website Language     |
+|----------------------|
+| TypeScript           |
