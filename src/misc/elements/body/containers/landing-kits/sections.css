@@ -1,9 +1,0 @@
-.container {
-    @apply relative left-0 right-0 mx-auto flex justify-center bg-white
-}
-
-.container-inner {
-    @apply block mt-[5rem] min-w-[0px] max-w-[768px] px-2 md:px-3
-        md:mt-[8rem] md:min-w-[768px] md:max-w-[1200px]
-        xl:mt-[10rem] xl:min-w-[1200px] xl:max-w-[1200px]
-}
