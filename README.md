@@ -27,7 +27,7 @@ All the code is documented with the mission to be a easy to **edit and easy to u
 <tr><td>
 
 | NextJS v14.0  |
-|---------------|
+|:-------------:|
 | React v18*    |
 | Tailwind CSS  |
 | Bun v1.0.7    |
@@ -39,7 +39,7 @@ All the code is documented with the mission to be a easy to **edit and easy to u
 <td>
 
 | TypeScript |
-|------------|
+|:----------:|
 | ORG & MD   |
 
 </td>
