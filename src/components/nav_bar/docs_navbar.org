@@ -46,7 +46,7 @@ import './nav_bar.css';
 This is our default function of the NavBar Component, scripts and backend code will be writed before the `return` (the rendering proces):
 
 [Texto en español]
-Esta es nuestra función predeterminada del Componente de la Barra de Navegación, los scripts y el código del backend se escribirán antes del `return` (el proceso de renderizado):
+Esta es nuestra función predeterminada del Componente de la Barra de Navegación, los scripts y el código del backend se escribirán antes del 'return' (el proceso de renderizado):
 
 #+BEGIN_SRC typescript :tangle ./component.tsx
 export default function NavBarComponent() {
