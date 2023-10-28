@@ -25,13 +25,18 @@ All the code is documented with the mission to be a easy to **edit and easy to u
 <table>
 <tr><th>Project Technologies</th> <th>Main Language</th></tr>
 <tr><td>
+
 | NextJS v14.0         |
 | React v18*           |
 | Tailwind CSS         |
 | Bun v1.0.7           |
 | npm v10.2.0          |
 | node v18.18.0        |
+
 </td></tr>
 
+<tr><td>
+
 | TypeScript           |
+
 </td></tr> </table>
