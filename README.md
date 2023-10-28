@@ -26,6 +26,8 @@ All the code is documented with the mission to be a easy to **edit and easy to u
 <tr><th>Project Technologies</th> <th>Main Language</th></tr>
 <tr><td>
 
+| Install all with Bun |
+|----------------------|
 | NextJS v14.0         |
 | React v18*           |
 | Tailwind CSS         |
@@ -37,6 +39,8 @@ All the code is documented with the mission to be a easy to **edit and easy to u
 
 <td>
 
-| TypeScript           |
+| SSR NextJS Preloading |
+|-----------------------|
+| TypeScript            |
 
 </td></tr> </table>
