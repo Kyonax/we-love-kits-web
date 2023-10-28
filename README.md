@@ -24,7 +24,7 @@ All the code is documented with the mission to be a easy to **edit and easy to u
 
 <table>
 <tr><th>Project Technologies</th> <th>Languages & Markdown</th> <th>Important Commands</th></tr>
-<tr><td>
+<tr><td align="center">
 
 | NextJS v14.0  |
 |:-------------:|
