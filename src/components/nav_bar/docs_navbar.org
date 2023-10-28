@@ -6,12 +6,14 @@ This DOC file has all the code and explanation of it, follow the Descriptions to
 
 * Table of Contents :toc:
 - [[#tsx-component][TSX Component]]
+  - [[#imports-for-component][Imports for Component]]
   - [[#default-function][Default Function]]
   - [[#state-variables][State Variables]]
 
 * TSX Component
-The NavBar Component will be our navigation tool in the Landing page, we need to import some app dependencies:
+The NavBar Component will be our navigation tool in the Landing page ~path: we-love-kits/src/components/nav_bar~
 
+** Imports for Component
 #+BEGIN_SRC typescript :tangle ./component.tsx
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
