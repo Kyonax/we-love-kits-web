@@ -19,18 +19,19 @@ customers." src="github/light.png">
   </a>
 </p>
 
-# Code Documentation
-All the code is documented with the mission to be a easy to **edit and easy to use** website. (The Documentation was writed on English and using .ORG Files)
+# Code Docs
+All the code is documented with the mission to be a easy to **edit and easy to use** website. (The Docs were writed on English and using .ORG Files)
 
-| Website Technologies |
-|----------------------|
+<table>
+<tr><th>Project Technologies</th> <th>Main Language</th></tr>
+<tr><td>
 | NextJS v14.0         |
 | React v18*           |
 | Tailwind CSS         |
 | Bun v1.0.7           |
 | npm v10.2.0          |
 | node v18.18.0        |
+</td></tr>
 
-| Website Language     |
-|----------------------|
 | TypeScript           |
+</td></tr> </table>
