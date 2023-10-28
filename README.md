@@ -36,7 +36,7 @@ All the code is documented with the mission to be a easy to **edit and easy to u
 
 </td>
 
-<td>
+<td align="center">
 
 | TypeScript |
 |:----------:|
@@ -44,7 +44,7 @@ All the code is documented with the mission to be a easy to **edit and easy to u
 
 </td>
 
-<td>
+<td align="center">
 
 | bun install | install dependencies |
 |-------------|----------------------|
