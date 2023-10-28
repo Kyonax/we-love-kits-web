@@ -1,0 +1,44 @@
+#+TITLE: DOCs NavBar Component
+#+AUTHOR: Kyonax - Cristian Moreno
+#+auto_tangle: t
+
+* Table of Contents :toc:
+- [[#tsx-component][TSX Component]]
+  - [[#default-function][Default Function]]
+
+* TSX Component
+The NavBar Component will be our index navigation, we are going to start importing some dependencies:
+
+#+BEGIN_SRC typescript :tangle ./component.tsx
+import Link from 'next/link';
+import { useState, useEffect } from 'react';
+#+END_SRC
+
+Import some libraries `heroicons` and `react-social-icons`, libraries for icons:
+
+#+BEGIN_SRC typescript :tangle ./component.tsx
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { SocialIcon } from 'react-social-icons';
+#+END_SRC
+
+Import CSS Styles for the NavBar:
+
+#+BEGIN_SRC typescript :tangle ./component.tsx
+import './nav_bar.css';
+#+END_SRC
+
+** Default Function
+
+#+BEGIN_SRC typescript :tangle ./component.tsx
+export default function NavBarComponent() {
+    const [nav, setNav] = useState(false);
+    const handleClick = () => setNav(!nav);
+#+END_SRC
+
+#+BEGIN_SRC typescript :tangle ./component.tsx
+    return( <> </> )
+#+END_SRC
+
+#+BEGIN_SRC typescript :tangle ./component.tsx
+}
+#+END_SRC

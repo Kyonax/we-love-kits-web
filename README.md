@@ -20,7 +20,10 @@ customers." src="github/light.png">
 </p>
 
 # Code Docs
-All the code is documented with the mission to be a easy to **edit and easy to use** website. (The Docs were writed on English and using .ORG Files)
+All the code is documented with the mission to be a easy to **edit and easy to use** website. (The Docs were writed on English and using .ORG Files) 
+
+[Texto en español]
+Todo el código está documentado con la misión de ser un sitio web fácil de editar y fácil de usar. (Los documentos fueron escritos en inglés y utilizan archivos .ORG).
 
 <table align="center">
 <tr><th>Project Technologies</th> <th>Language & DOCS</th> <th>Important Commands</th></tr>
