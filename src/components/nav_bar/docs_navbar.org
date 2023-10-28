@@ -2,10 +2,7 @@
 #+AUTHOR: Kyonax - Cristian Moreno
 #+auto_tangle: t
 
-This DOC file has all the code and explanation of it, follow the Descriptions to understand what the NavBarComponent do. Writed with Typescript & CSS.
-
-[Texto en español]
-Este archivo DOC contiene todo el código y su explicación. Siga las descripciones para comprender qué hace el NavBarComponent. Escrito en TypeScript y CSS.
+This DOC file has all the code and explanation of it, follow the Descriptions to understand what the NavBarComponent do. Typescript & CSS.
 
 * Table of Contents :toc:
 - [[#tsx-component][TSX Component]]
@@ -14,18 +11,12 @@ Este archivo DOC contiene todo el código y su explicación. Siga las descripcio
 * TSX Component
 The NavBar Component will be our navigation tool in the Landing page, we need to import some app dependencies:
 
-[Texto en español]
-El Componente de la Barra de Navegación será nuestra herramienta de navegación en la Landing page, necesitamos importar algunas dependencias de la aplicación:
-
 #+BEGIN_SRC typescript :tangle ./component.tsx
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 #+END_SRC
 
 Import some libraries ~heroicons~ and ~react-social-icons~, libraries for icons:
-
-[Texto en español]
-Importe algunas bibliotecas ~heroicons~ y ~react-social-icons~, bibliotecas de iconos:
 
 #+BEGIN_SRC typescript :tangle ./component.tsx
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
@@ -34,9 +25,6 @@ import { SocialIcon } from 'react-social-icons';
 
 Import CSS Styles for the NavBar:
 
-[Texto en español]
-Importe los estilos CSS para la Barra de Navegación:
-
 #+BEGIN_SRC typescript :tangle ./component.tsx
 import './nav_bar.css';
 #+END_SRC
@@ -44,9 +32,6 @@ import './nav_bar.css';
 ** Default Function
 
 This is our default function of the NavBar Component, scripts and backend code will be writed before the ~return~ (the rendering process):
-
-[Texto en español]
-Esta es nuestra función predeterminada del Componente de la Barra de Navegación, los scripts y el código del backend se escribirán antes del ~return~ (el proceso de renderizado):
 
 #+BEGIN_SRC typescript :tangle ./component.tsx
 export default function NavBarComponent() {
