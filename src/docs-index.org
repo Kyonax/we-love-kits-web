@@ -1,0 +1,120 @@
+#+TITLE: DOCs Index File
+#+AUTHOR: Kyonax - Cristian Moreno
+#+auto_tangle: t
+
+The React APP is build with ~react-router-dom~ mission: create a Single Web Application. The project has some important components and hooks made by me, with the mission to speed up the code process and the website rendering, mainly with the ~multimedia-images~.
+
+~NOTE: Don't change any hook or component if you don't know what are the uses for each one!~
+
+* Table of Contents :toc:
+- [[#index-app][Index APP]]
+  - [[#imports][Imports]]
+  - [[#functions-and-root][Functions and Root]]
+  - [[#rendering][Rendering]]
+- [[#css-styles][CSS Styles]]
+  - [[#tailwind-implementation][Tailwind Implementation]]
+  - [[#imports-of-fonts-with-css][Imports of Fonts with CSS]]
+  - [[#custom-layers-css][Custom Layers CSS]]
+  - [[#global-css-classes][Global CSS Classes]]
+
+* Index APP
+Implementation of ~react-router-dom~ and the creation of the ~preload-component~.
+
+** Imports
+Import all the base ~react~ elements/components/hooks.
+
+#+BEGIN_SRC typescript :tangle ./index.tsx
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+
+import reportWebVitals from './reportWebVitals';
+#+END_SRC
+
+Import of all the main/global ~css styles~.
+
+#+BEGIN_SRC typescript :tangle ./index.tsx
+import './index.css';
+#+END_SRC
+
+Import of the ~App~ Component (the main component of our application)
+
+#+BEGIN_SRC typescript :tangle ./index.tsx
+import App from './app/App';
+#+END_SRC
+
+** Functions and Root
+Creation of root using ~createRoot~
+
+#+BEGIN_SRC typescript :tangle ./index.tsx
+const root = createRoot( document.getElementById('root') as HTMLElement );
+#+END_SRC
+
+** Rendering
+Root rendering and WebVitals
+
+#+BEGIN_SRC typescript :tangle ./index.tsx
+root.render(<BrowserRouter> <App /> </ BrowserRouter>);
+
+reportWebVitals(console.log);
+#+END_SRC
+
+* CSS Styles
+All the Styles for the Index Component!
+
+** Tailwind Implementation
+The project use ~Tailwind CSS~.
+
+#+BEGIN_SRC css :tangle ./index.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+#+END_SRC
+
+** Imports of Fonts with CSS
+Importing of ~GoogleFonts~ for the project.
+
+#+BEGIN_SRC css :tangle ./index.css
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+#+END_SRC
+
+** Custom Layers CSS
+A ~Base Custom Layer~ destinaded for all the Buttons in the application.
+
+#+BEGIN_SRC css :tangle ./index.css
+@layer base {
+  li { @apply p-4 pt-6 pb-6 text-white; }
+
+  button {
+    @apply text-white border bg-indigo-600 border-indigo-600
+    hover:bg-transparent hover:text-indigo-600 rounded-md;
+  }
+}
+#+END_SRC
+
+** Global CSS Classes
+Some ~Global Classes~ are important because all classes take place in all the project. Don't change it!
+
+#+BEGIN_SRC css :tangle ./index.css
+.body-parallax { background-color: #AB94FF }
+
+.blur-class { filter: blur(5px) }
+#+END_SRC
+
+Global ~css configuration for navigators~ some of the css styles down here are standart configurations, however I change some features, mainly ~global rendering fonts~, keep the custom configs, you can modify the rest.
+
+#+BEGIN_SRC css :tangle ./index.css
+body {
+  margin: 0;
+  font-family: "Prompt", "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+#+END_SRC
