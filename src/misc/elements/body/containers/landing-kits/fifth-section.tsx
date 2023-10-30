@@ -35,7 +35,7 @@ const FifthSection: React.FC<FifthSectionProps> = ({}) => {
 
     return (
         <div className='m-auto flex w-screen justify-center bg-white'>
-            <div className='mt-[10rem] m-auto min-w-[1200px] max-w-[1200px]'>
+            <div id="to-blur" className='mt-[10rem] m-auto min-w-[1200px] max-w-[1200px]'>
                 <div className='block'>
                     <div className="flex w-full">
                         <motion.div

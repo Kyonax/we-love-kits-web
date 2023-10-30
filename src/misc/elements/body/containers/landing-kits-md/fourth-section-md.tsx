@@ -1,9 +1,12 @@
 import {useEffect, useRef, useState} from "react"
 
-import KitBienvenida from '../../../../assets/Kit-bienvenida.webp'
-import KitEventos from '../../../../assets/Kit-bienvenida.webp'
-import KitProyectos from '../../../../assets/Kit-bienvenida.webp'
-import KitReconocimiento from '../../../../assets/Kit-bienvenida.webp'
+import disableScroll from 'disable-scroll';
+import Modal from '../../../items/modal_kits';
+
+import KitBienvenida from '../../../../assets/modal-images/kit-bienvenida-one.png'
+import KitEventos from '../../../../assets/modal-images/kit-eventos-one.png'
+import KitProyectos from '../../../../assets/modal-images/kit-proyectos-one.png'
+import KitReconocimiento from '../../../../assets/modal-images/kit-reconocimiento-one.png'
 
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
@@ -15,6 +18,8 @@ import {motion, useInView, useAnimation} from "framer-motion";
 interface FourthSectionProps {}
 
 const FourthSection: React.FC<FourthSectionProps> = ({}) => {
+    const [isModal, setIsModal] = useState(false), [whichCard, setWhichCard] = useState(0);
+
     const refText = useRef(null), refHearts = useRef(null), refGirl = useRef(null),
           refCardOne = useRef(null), refCardTwo = useRef(null), refCardThree = useRef(null),
           refCardFourth = useRef(null);
@@ -50,8 +55,19 @@ const FourthSection: React.FC<FourthSectionProps> = ({}) => {
             else cardFourthControls.start("hidden");
 
     }, [isInViewText, isInViewHearts, isInViewGirl, isInViewCardOne, isInViewCardTwo, isInViewCardThree, isInViewCardFourth])
+
+    useEffect(() => {
+        const BackElements = document.querySelectorAll('[id=to-blur]');
+
+        BackElements.forEach(element => {
+            if (isModal) {element?.classList.add('blur-class'); disableScroll.on()}
+                else {element?.classList.remove('blur-class'); disableScroll.off()}
+        } );
+        console.log(isModal)
+    }, [isModal]);
     return (
         <div className='m-auto w-screen flex justify-center bg-white'>
+            <div className={isModal ? 'flex' : 'hidden'}><Modal number_of_card={whichCard} is_showing={isModal} setIsShowing={setIsModal}/></div>
             <div id="to-blur" className='m-auto px-5 mt-[8rem] lg:mt-[10rem] block lg:flex w-screen min-w-[768px] max-w-[1200px]'>
 
                 <div className="w-full lg:w-6/12 block py-10 px-0 text-5xl lg:text-6xl text-black font-light">
@@ -102,6 +118,7 @@ const FourthSection: React.FC<FourthSectionProps> = ({}) => {
                         
                         whileHover={{ scale: [null, 1.02, 1.02] }}
                         transition={{duration: 0.3, delay: 0.0}}
+                        onClick={event => {setIsModal(true); setWhichCard(1)}}
 
                             style={{ backgroundImage: `url(${KitBienvenida})` }} className="group hover:cursor-pointer relative w-full lg:m-6 h-[25rem] lg:h-[20rem] bg-cover bg-center rounded-2xl" ref={refCardOne}>
                             <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer'>
@@ -124,6 +141,7 @@ const FourthSection: React.FC<FourthSectionProps> = ({}) => {
                         whileHover={{ scale: [null, 1.02, 1.02] }}
                         transition={{duration: 0.3, delay: 0.0}}
 
+                        onClick={event => {setIsModal(true); setWhichCard(2)}}
 
                         style={{ backgroundImage: `url(${KitEventos})` }} className="group hover:cursor-pointer relative w-full my-6 lg:m-6 h-[25rem] lg:h-[20rem] bg-cover bg-center rounded-2xl" ref={refCardTwo}>
                             <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer'>
@@ -145,6 +163,7 @@ const FourthSection: React.FC<FourthSectionProps> = ({}) => {
                         
                         whileHover={{ scale: [null, 1.02, 1.02] }}
                         transition={{duration: 0.3, delay: 0.0}}
+                        onClick={event => {setIsModal(true); setWhichCard(3)}}
 
                             style={{ backgroundImage: `url(${KitProyectos})` }} className="group hover:cursor-pointer relative w-full my-6 lg:m-6 h-[25rem] lg:h-[20rem] bg-cover bg-center rounded-2xl" ref={refCardThree}>
                             <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer'>
@@ -167,6 +186,7 @@ const FourthSection: React.FC<FourthSectionProps> = ({}) => {
                         
                         whileHover={{ scale: [null, 1.02, 1.02] }}
                         transition={{duration: 0.3, delay: 0.0}}
+                        onClick={event => {setIsModal(true); setWhichCard(4)}}
 
                         style={{ backgroundImage: `url(${KitReconocimiento})` }} className="group hover:cursor-pointer relative w-full my-6 lg:m-6 h-[25rem] lg:h-[20rem] bg-cover bg-center rounded-2xl" ref={refCardFourth}>
                             <div className='absolute flex w-full justify-center bottom-8 hover:cursor-pointer'>
