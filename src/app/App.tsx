@@ -1,12 +1,14 @@
 import './App.css';
 
-import LoadImage from '../components/hooks/image_load/component';
-import ImageTesting from '../assets/wallpaper_img_test/image';
+import NavBar from '../components/estructure/nav_bar/component';
+import Footer from '../components/estructure/footer/index';
 
 function App() {
+
   return (
-    <div className="App">
-      <LoadImage alt="Testing File" load={true} image={ImageTesting} />
+    <div>
+      <NavBar />
+      <Footer />
     </div>
   );
 }

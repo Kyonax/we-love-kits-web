@@ -1,0 +1,151 @@
+#+TITLE: Image Load Component & Hooks
+#+AUTHOR: Kyonax - Cristian Moreno
+#+auto_tangle: t
+
+The ~Image Load Component~ is used to import images in the best and lowest version possible, returning a new Image Element.
+
+* Table of Contents :toc:
+- [[#js-effects][JS Effects]]
+  - [[#load-image-listener][Load Image Listener]]
+- [[#load-image][Load Image]]
+  - [[#imports][Imports]]
+  - [[#component-structure][Component Structure]]
+- [[#css-style][CSS Style]]
+- [[#hook-get-responsive-size][Hook Get Responsive Size]]
+
+* JS Effects
+We are going to use some ~js effects~ for this component, adding a best view response.
+
+** Load Image Listener
+
+#+BEGIN_SRC typescript :tangle ./effects.tsx
+import { useEffect } from 'react';
+
+export const useLoadImage = () => {
+    useEffect(() => {
+        const blur_divs = document.querySelectorAll(".blur-load");
+
+        blur_divs.forEach(div => {
+            const img = div.querySelector("img");
+
+            function loaded() {
+                div.classList.add("loaded");
+            }
+
+            if (img?.complete) loaded()
+                else img?.addEventListener("load", loaded)
+        })
+    })
+}
+#+END_SRC
+
+* Load Image
+
+** Imports
+Import ~useLoadImage~ to add some Listeners for the load image, a css class for ~styling~ and nothing more!
+
+#+BEGIN_SRC typescript :tangle ./component.tsx
+import { useLoadImage } from'./effects';
+import './component.css';
+#+END_SRC
+
+** Component Structure
+Don't modify this component if you don't know what to do. (if you can improve the image importing add your code) |
+
+The beginning of the function initialize the different sizes of the website ~sm - md - xl - yl~ and the replace method is giving the file name this will alow us to import the ~webp and avif~ formats of the same picture.
+
+#+BEGIN_SRC typescript :tangle ./component.tsx
+interface LoadImageProps { alt: string, w: number, h: number, instantLoad: boolean, image: any }
+
+const LoadImage: React.FC<LoadImageProps> = ({ alt, w, h, instantLoad, image }) => {
+    const vw_sizes = { "sm": 365, "md": 768, "xl": 1024, "yl": 1200 };
+    const load_image_listener = useLoadImage();
+
+    return (
+        <div className={instantLoad ? `` : `blur-load`} style={instantLoad ? { width: `${w}px`, height: `${h}px` } : { backgroundImage: `url(${image.webp.lower}), url(${image.default.lower})`, width: `${w}px`, height: `${h}px`, backgroundSize: `${w}px ${h}px`}}>
+#+END_SRC
+
+Using HTML I'm creating a template to load Images in the best way possible, using ~picture~ the browser may choose the best option between ~png/jpg, webp, and avif~ depending if the browser support those file extensions. also the ~srcSet~ choose the best file size to load, this depends on wich device is using to load the website ~sm - md - xl yl~.
+
+#+BEGIN_SRC html :tangle ./component.tsx
+            <picture>
+              <source
+                type="image/avif"
+                srcSet={`${image.avif[vw_sizes.sm]} ${vw_sizes.sm}w,
+                ${image.avif[vw_sizes.md]} ${vw_sizes.md}w,
+                ${image.avif[vw_sizes.xl]} ${vw_sizes.xl}w,
+                ${image.avif[vw_sizes.yl]} ${vw_sizes.yl}w`}
+                />
+              <source
+                type="image/webp"
+                srcSet={`${image.webp[vw_sizes.sm]} ${vw_sizes.sm}w,
+                ${image.webp[vw_sizes.md]} ${vw_sizes.md}w,
+                ${image.webp[vw_sizes.xl]} ${vw_sizes.xl}w,
+                ${image.webp[vw_sizes.yl]} ${vw_sizes.yl}w`}
+                />
+              <img
+                src={image.default.image}
+                alt={alt}
+                width={w}
+                height={h}
+                sizes={`(max-width: ${vw_sizes.sm}) ${vw_sizes.sm}px,
+                (max-width: ${vw_sizes.md}) ${vw_sizes.md}px,
+                (max-width: ${vw_sizes.xl}) ${vw_sizes.xl}px,
+                ${vw_sizes.yl}px`}
+                srcSet={`${image.default[vw_sizes.sm]} ${vw_sizes.sm}w,
+                ${image.default[vw_sizes.md]} ${vw_sizes.md}w,
+                ${image.default[vw_sizes.xl]} ${vw_sizes.xl}w,
+                ${image.default[vw_sizes.yl]} ${vw_sizes.yl}w`}
+                loading={instantLoad ? 'eager' : 'lazy'}
+                decoding="async"
+              />
+            </picture>
+#+END_SRC
+
+#+BEGIN_SRC typescript :tangle ./component.tsx
+        </div>
+    )
+}
+
+export default LoadImage
+#+END_SRC
+
+* CSS Style
+
+#+BEGIN_SRC css :tangle ./component.css
+.blur-load { background-size: cover; background-position: center; background-repeat: no-repeat; }
+
+.blur-load.loaded img { opacity: 1; filter: blur(0px); }
+.blur-load img { opacity: 0; transition: opacity 200ms ease-in-out; filter: blur(100px); }
+#+END_SRC
+
+* Hook Get Responsive Size
+
+#+BEGIN_SRC typescript :tangle ./useResponsiveSize.tsx
+import { useEffect, useState } from 'react';
+
+function getCurrentDimension(full: boolean) {
+    let max_website_size = 1200, size = window.innerWidth;
+
+    if (size >= max_website_size && full === false) return max_website_size;
+        else return window.innerWidth
+}
+
+export const useResponsiveSize = (size: number, o_width: number, o_height: number, full: boolean) => {
+    const [viewportSize, setViewportSize] = useState(getCurrentDimension(full));
+
+    let sizeResponsive = {'width': o_width, 'height': o_height}, relative_size = (((size * 100)/1200)/100)*viewportSize , percentage = ((relative_size * 100)/o_width)/100, newWidth = percentage * o_width , newHeight = percentage * o_height;
+
+    sizeResponsive = { 'width': newWidth, 'height': newHeight };
+
+    useEffect(() => {
+        const updateDimension = () => { setViewportSize(getCurrentDimension(full)) }
+
+        window.addEventListener('resize', updateDimension);
+
+        return(() => { window.removeEventListener('resize', updateDimension) })
+    }, [viewportSize])
+
+    return { sizeResponsive }
+}
+#+END_SRC

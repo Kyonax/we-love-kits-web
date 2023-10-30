@@ -13,8 +13,6 @@
   }
 }
 
-.body-parallax { background-color: #AB94FF }
-
 .blur-class { filter: blur(5px) }
 
 body {
@@ -25,6 +23,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  background-color: #AB94FF;
 }
 
 code {

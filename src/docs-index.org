@@ -95,8 +95,6 @@ A ~Base Custom Layer~ destinaded for all the Buttons in the application.
 Some ~Global Classes~ are important because all classes take place in all the project. Don't change it!
 
 #+BEGIN_SRC css :tangle ./index.css
-.body-parallax { background-color: #AB94FF }
-
 .blur-class { filter: blur(5px) }
 #+END_SRC
 
@@ -111,6 +109,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  background-color: #AB94FF;
 }
 
 code {

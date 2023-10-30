@@ -1,0 +1,30 @@
+.footer-bg {
+  background-color: #AB94FF;
+}
+
+.social-svg-icon {
+  fill: black !important;
+  opacity: 100%;
+}
+
+.icon-style:hover {
+  .social-svg-icon {
+    opacity: 100%;
+  }
+
+  .icons {
+    opacity: 100%;
+  }
+
+  .text-style {
+    opacity: 100%;
+  }
+}
+
+.hover-nice {
+  @apply bg-transparent py-2 rounded-full transition duration-700 mx-2
+}
+
+.hover-nice:hover {
+  @apply bg-black py-2 rounded-full text-[#FFF384] transition duration-700
+}

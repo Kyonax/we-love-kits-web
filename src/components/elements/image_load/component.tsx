@@ -1,30 +1,15 @@
-#+TITLE: Image Load Component
-#+AUTHOR: Kyonax - Cristian Moreno
-#+auto_tangle: t
+import { useLoadImage } from'./effects';
+import './component.css';
 
-The ~Image Load Component~ is used to import images in the best and lowest version possible, returning a new Image Element.
+interface LoadImageProps { alt: string, w: number, h: number, instantLoad: boolean, image: any }
 
-* Table of Contents :toc:
-- [[#useimageload][useImageLoad]]
-
-* useImageLoad
-Don't modify this component if you don't know what to do. (if you can improve the image importing add your code) |
-
-The beginning of the function initialize the different sizes of the website ~sm - md - xl - yl~ and the replace method is giving the file name this will alow us to import the ~webp and avif~ formats of the same picture.
-
-#+BEGIN_SRC typescript :tangle ./component.tsx
-interface LoadImageProps { alt: string, load: boolean, image: any }
-
-const LoadImage: React.FC<LoadImageProps> = ({ alt, load, image }) => {
+const LoadImage: React.FC<LoadImageProps> = ({ alt, w, h, instantLoad, image }) => {
     const vw_sizes = { "sm": 365, "md": 768, "xl": 1024, "yl": 1200 };
+    const load_image_listener = useLoadImage();
 
     return (
-        <>
-#+END_SRC
+        <div className={instantLoad ? `` : `blur-load`} style={instantLoad ? { width: `${w}px`, height: `${h}px` } : { backgroundImage: `url(${image.webp.lower}), url(${image.default.lower})`, width: `${w}px`, height: `${h}px`, backgroundSize: `${w}px ${h}px`}}>
 
-Using HTML I'm creating a template to load Images in the best way possible, using ~picture~ the browser may choose the best option between ~png/jpg, webp, and avif~ depending if the browser support those file extensions. also the ~srcSet~ choose the best file size to load, this depends on wich device is using to load the website ~sm - md - xl yl~.
-
-#+BEGIN_SRC html :tangle ./component.tsx
             <picture>
               <source
                 type="image/avif"
@@ -43,6 +28,8 @@ Using HTML I'm creating a template to load Images in the best way possible, usin
               <img
                 src={image.default.image}
                 alt={alt}
+                width={w}
+                height={h}
                 sizes={`(max-width: ${vw_sizes.sm}) ${vw_sizes.sm}px,
                 (max-width: ${vw_sizes.md}) ${vw_sizes.md}px,
                 (max-width: ${vw_sizes.xl}) ${vw_sizes.xl}px,
@@ -51,16 +38,13 @@ Using HTML I'm creating a template to load Images in the best way possible, usin
                 ${image.default[vw_sizes.md]} ${vw_sizes.md}w,
                 ${image.default[vw_sizes.xl]} ${vw_sizes.xl}w,
                 ${image.default[vw_sizes.yl]} ${vw_sizes.yl}w`}
-                loading={load ? 'eager' : 'lazy'}
+                loading={instantLoad ? 'eager' : 'lazy'}
                 decoding="async"
               />
             </picture>
-#+END_SRC
 
-#+BEGIN_SRC typescript :tangle ./component.tsx
-        </>
+        </div>
     )
 }
 
 export default LoadImage
-#+END_SRC
