@@ -1,18 +1,3 @@
-#+TITLE: Image Load Component
-#+AUTHOR: Kyonax - Cristian Moreno
-#+auto_tangle: t
-
-The ~Image Load Component~ is used to import images in the best and lowest version possible, returning a new Image Element.
-
-* Table of Contents :toc:
-- [[#useimageload][useImageLoad]]
-
-* useImageLoad
-Don't modify this component if you don't know what to do. (if you can improve the image importing add your code) |
-
-The beginning of the function initialize the different sizes of the website ~sm - md - xl - yl~ and the replace method is giving the file name this will alow us to import the ~webp and avif~ formats of the same picture.
-
-#+BEGIN_SRC typescript :tangle ./component.tsx
 interface LoadImageProps { alt: string, load: boolean, image: any }
 
 const LoadImage: React.FC<LoadImageProps> = ({ alt, load, image }) => {
@@ -20,11 +5,7 @@ const LoadImage: React.FC<LoadImageProps> = ({ alt, load, image }) => {
 
     return (
         <>
-#+END_SRC
 
-Using HTML I'm creating a template to load Images in the best way possible, using ~picture~ the browser may choose the best option between ~png/jpg, webp, and avif~ depending if the browser support those file extensions. also the ~srcSet~ choose the best file size to load, this depends on wich device is using to load the website ~sm - md - xl yl~.
-
-#+BEGIN_SRC html :tangle ./component.tsx
             <picture>
               <source
                 type="image/avif"
@@ -55,12 +36,9 @@ Using HTML I'm creating a template to load Images in the best way possible, usin
                 decoding="async"
               />
             </picture>
-#+END_SRC
 
-#+BEGIN_SRC typescript :tangle ./component.tsx
         </>
     )
 }
 
 export default LoadImage
-#+END_SRC
