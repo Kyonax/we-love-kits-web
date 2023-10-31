@@ -1,0 +1,25 @@
+.container-preload {
+    @apply relative w-screen h-screen flex
+}
+
+.back-container {
+    @apply w-full h-full bg-white
+}
+
+.item_to_load {
+    @apply absolute left-0 right-0 top-0 bottom-0 m-auto text-white
+}
+
+.item_to_load{
+    animation: loading 1s linear  infinite alternate;
+}
+
+@keyframes loading {
+    0% {
+        opacity: 30%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}

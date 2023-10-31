@@ -1,0 +1,7 @@
+.App {
+  @apply bg-[#AB94FF] w-screen h-screen
+}
+
+.loader-container {
+    @apply absolute z-[100]
+}

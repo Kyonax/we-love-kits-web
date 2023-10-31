@@ -13,8 +13,6 @@ import './style.css'
 export default function Footer () {
     const { sizeResponsive } = useResponsiveSize(765, 765, 480, false);
 
-    console.log(FooterCharacter)
-
     return (
         <div className="m-auto block justify-center footer-bg">
             <div className="m-auto px-5 lg:px-5 block lg:flex p-[3rem] px-0 pb-0 relative w-screen min-w-[0px] max-w-[768px]">
