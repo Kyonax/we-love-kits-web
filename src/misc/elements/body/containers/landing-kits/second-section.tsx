@@ -69,25 +69,29 @@ const SecondSection: React.FC<SecondSectionProps> = ({ windowSize }) => {
                                     initial="hidden" animate={cardsAnimationOne.mainControls} transition={{ duration: 0.75, delay: 0.25 }}
                                     className="card bg-[#AB94FF]" ref={ref_cards_one}>
                             <div className="letter-card w"><LazyLoadImage alt="W Letter" src={W} placeholderSrc={W} effect="blur" /></div>
-                            <div className="person-card pw"><LazyLoadImage alt="W Person" src={PersonW} placeholderSrc={PersonW} effect="blur" /></div>
+                            <div className="person-card pw"><LazyLoadImage alt="W Person" src={PersonW} placeholderSrc={PersonW} effect="blur" /></div> 
+                            <div className="text-card-inner"><p className="font-bold text-[#FFE661]">HABLAMOS <p className="font-normal text-white">para entender a fondo tus necesidades,<p className="font-bold">cada kit es único.</p></p></p></div>
                         </motion.div>
                         <motion.div variants={{ hidden: {opacity: 0, y: 75}, visible: {opacity: 1, y: 0} }}
                                     initial="hidden" animate={cardsAnimationTwo.mainControls} transition={{ duration: 0.75, delay: 0.50 }}
                                     className="card bg-[#79A3FF]" ref={ref_cards_two}>
                             <div className="letter-card l"><LazyLoadImage alt="L Letter" src={L} placeholderSrc={L} effect="blur" /></div>
                             <div className="person-card pl"><LazyLoadImage alt="L Person" src={PersonL} placeholderSrc={PersonL} effect="blur" /></div>
+                        <div className="text-card-inner"><p className="font-bold">Creamos un diseño <p className="font-bold text-[#044FEA]">PERSONALIZADO <p className="font-normal text-white">para cumplir con la visión de tu Kit.</p></p></p></div>
                         </motion.div>
                         <motion.div variants={{ hidden: {opacity: 0, y: 75}, visible: {opacity: 1, y: 0} }}
                                     initial="hidden" animate={cardsAnimationThree.mainControls} transition={{ duration: 0.75, delay: 0.75 }}
                                     className="card bg-[#FF7878]" ref={ref_cards_three}>
                             <div className="letter-card k"><LazyLoadImage alt="K Letter" src={K} placeholderSrc={K} effect="blur" /></div>
                             <div className="person-card pk"><LazyLoadImage alt="K Person" src={PersonK} placeholderSrc={PersonK} effect="blur" /></div>
+                        <div className="text-card-inner"><p>Construimos con los mejores materiales de alta calidad.</p></div>
                         </motion.div>
                         <motion.div variants={{ hidden: {opacity: 0, y: 75}, visible: {opacity: 1, y: 0} }}
                                     initial="hidden" animate={cardsAnimationFourth.mainControls} transition={{ duration: 0.75, delay: 1 }}
                                     className="card bg-[#7BEC94]" ref={ref_cards_fourth}>
                             <div className="letter-card h" ><LazyLoadImage alt="H Letter" src={H} placeholderSrc={H} effect="blur" /></div>
                             <div className="person-card ph"><LazyLoadImage alt="H Person" src={PersonH} placeholderSrc={PersonH} effect="blur" /></div>
+                        <div className="text-card-inner"><p>Experimenta la emoción de recibir tu kit personalizado, listo para hacer realidad tus sueños.</p></div>
                         </motion.div>
                     </div>
                 </div>

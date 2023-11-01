@@ -38,29 +38,40 @@
 }
 
 .card {
-    @apply relative flex w-full md:w-1/4 rounded-xl overflow-hidden h-[15rem]
+    @apply relative flex w-full md:w-1/4 rounded-md lg:rounded-xl overflow-hidden h-[9rem] sm:h-[12rem]
     md:h-[25rem] lg:h-[30rem] xl:h-[35rem]
 }
 
 .letter-card {
-    @apply absolute left-0 right-0 mx-auto
+    @apply absolute top-[-1rem] left-0 right-0 mx-auto ml-0 w-6/12 md:ml-auto md:w-auto
 }
 
 .person-card {
-    @apply top-0 bottom-0 left-0 right-0 m-auto
+    @apply top-0 bottom-0 left-0 right-0 ml-3 lg:ml-auto m-auto
 }
 
-.l { @apply w-[65%] }
+.text-card-inner {
+    @apply text-[15px] flex w-6/12 right-1  absolute top-0 bottom-0 m-auto text-center px-4
+                          sm:text-[20px] sm:right-10
+                          md:top-auto md:bottom-10 md:mx-auto md:text-[11px] md:right-0 md:left-0 md:w-auto
+                          lg:text-[16px] lg:h-[20%]
+}
 
-.k { @apply w-[88%] }
+.text-card-inner p {
+    @apply top-0 bottom-0 right-0 left-0 m-auto
+}
 
-.h { @apply w-[88%] }
+.l { @apply md:w-[65%] }
+
+.k { @apply md:w-[88%] }
+
+.h { @apply md:w-[88%] }
 
 
-.pw { @apply w-[40%] md:w-[80%] }
+.pw { @apply w-[30%] md:w-[80%] md:mt-[6rem] }
 
-.pl { @apply w-[40%] md:w-[80%] mt-[3rem] }
+.pl { @apply w-[30%] md:w-[80%] mt-1 md:mt-[3rem] }
 
-.pk { @apply w-[40%] md:w-[60%] mt-[3rem] }
+.pk { @apply w-[30%] md:w-[60%] mt-1 md:mt-[3rem] }
 
-.ph { @apply w-[40%] md:w-[80%] }
+.ph { @apply w-[30%] md:w-[80%] }

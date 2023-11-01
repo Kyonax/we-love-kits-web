@@ -3,6 +3,7 @@ import {useEffect, useRef, useState} from "react"
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import LogoBancolombia from '../../../../assets/bancolombia_logo.webp'
+import LogoProteccion from '../../../../assets/protec-logo.png';
 import LogoNutresa from '../../../../assets/nutresa_logo.svg'
 
 import {motion, useInView, useAnimation} from "framer-motion";
@@ -98,7 +99,7 @@ const FifthSection: React.FC<FifthSectionProps> = ({}) => {
                                 className='w-1/3 m-auto p-[4rem] pt-8 lg:p-[6rem] lg:pt-16 pl-0 lg:pl-0 opacity-80' ref={refLogoThird}>
                                 <LazyLoadImage
                                     alt='Logo Bancolombia'
-                                    src={LogoBancolombia}
+                                    src={LogoProteccion}
                                 />
                             </motion.div>
                         </div>

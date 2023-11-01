@@ -3,6 +3,7 @@ import {useEffect, useRef, useState} from "react"
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import LogoBancolombia from '../../../../assets/bancolombia_logo.webp'
+import LogoProteccion from '../../../../assets/protec-logo.png';
 import LogoNutresa from '../../../../assets/nutresa_logo.svg'
 
 import {motion, useInView, useAnimation} from "framer-motion";
@@ -15,7 +16,7 @@ const FifthSection: React.FC<FifthSectionProps> = ({}) => {
     const isInViewText = useInView(refText), isInViewLogoFirst = useInView(refLogoFirst), isInViewLogoSecond = useInView(refLogoSecond),
           isInViewLogoThird = useInView(refLogoThird);
 
-    const textControls = useAnimation(), logoFirstControls = useAnimation(), logoSecondControls = useAnimation(), logoThirdControls = useAnimation();
+    const textControls = useAnimation(), logoFirstControls = useAnimation(), logoSecondControls = useAnimation(), logoThirdControls = useAnimation();;
 
     useEffect(() => {
         if (isInViewText) textControls.start("visible");
@@ -97,7 +98,7 @@ const FifthSection: React.FC<FifthSectionProps> = ({}) => {
                                 className='w-1/3 m-auto p-[7rem] pt-16 pl-0 opacity-80' ref={refLogoThird}>
                                 <LazyLoadImage
                                     alt='Logo Bancolombia'
-                                    src={LogoBancolombia}
+                                    src={LogoProteccion}
                                 />
                             </motion.div>
                         </div>

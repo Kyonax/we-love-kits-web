@@ -1,17 +1,21 @@
 .back-modal-kits{
- @apply fixed z-50 top-0 bottom-0 left-0 right-0 w-screen h-screen
+ @apply fixed bg-white z-50 top-0 bottom-0 left-0 right-0 w-screen h-screen
 }
 
 .container-modal-kits {
-    @apply fixed m-auto top-0 bottom-0 left-0 right-0 z-50 w-[90%] h-full overflow-x-hidden overflow-y-hidden block max-w-[1300px] bg-white p-4 py-10
+    @apply fixed m-auto top-0 lg:top-[-3rem] xl:top-0 bottom-0 left-0 right-0 z-50 w-[90%] lg:w-[80%] xl:w-auto h-full overflow-x-hidden overflow-y-hidden block max-w-[1200px] bg-white p-4 xl:p-16 py-10
 }
 
 .big-picture-kits {
-    @apply relative left-0 right-0 m-auto h-[20%] md:h-[30%] xl:h-[50%] w-full bg-black rounded-2xl bg-cover bg-center
+    @apply relative left-0 right-0 m-auto h-[45%] sm:h-[50%] lg:h-[50%] w-full bg-black rounded-lg lg:rounded-2xl bg-cover bg-center
 }
 
 .column-kits {
     @apply relative flex left-0 right-0 m-auto h-[30rem] w-full space-x-4 mt-4
+}
+
+.spacing-x {
+    @apply right-0 xl:px-16 px-4
 }
 
 .text-container {
@@ -19,13 +23,13 @@
 }
 
 .title-kits {
-    @apply text-4xl md:text-5xl font-black text-black
+    @apply text-3xl sm:text-4xl lg:text-5xl font-black text-black
 }
 
 .parragraph-kits {
-    @apply text-[13px] md:text-[16px] text-black
+    @apply text-[11px] md:text-[13px] text-black sm:w-4/5 lg:w-2/3
 }
 
 .small-picture-kits {
-    @apply relative w-1/3 h-[10rem] rounded-xl bg-cover bg-center cursor-pointer
+    @apply relative w-1/3 h-[6rem] xl:h-[8rem] rounded-md lg:rounded-xl bg-cover bg-center cursor-pointer
 }

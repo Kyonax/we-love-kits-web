@@ -3,6 +3,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import {motion, useInView, useAnimation, useIsPresent} from "framer-motion";
 
+import { Bars3Icon, XMarkIcon, EnvelopeIcon } from '@heroicons/react/24/outline'
 import './modal-kits.css';
 
 import AgendaFirst from '../../assets/modal-images/kit-bienvenida-one.png';
@@ -108,6 +109,9 @@ const ModalSection: React.FC<ModalSectionProps> = ({number_of_card, is_showing, 
         <div>
             <div onClick={event => {setIsShowing(false)}} className="back-modal-kits"/>
             <div className="container-modal-kits">
+                <div className='absolute spacing-x hover:cursor-pointer' onClick={event => {setIsShowing(false)}}>
+                    <XMarkIcon className={`w-6 text-black`} />
+                </div>
                 <div className="text-container">
                     <div className="title-kits">
                         <p>{ textHandle.title_1 }</p>
