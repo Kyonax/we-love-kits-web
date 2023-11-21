@@ -1,0 +1,82 @@
+.motion-text {
+    @apply w-full md:w-4/6 md:m-auto
+}
+
+.motion-text-separators {
+    @apply w-0 md:w-1/6
+}
+
+.motion-text p {
+    @apply block font-bold text-center text-black
+        text-xl md:text-4xl
+}
+
+.motion-text a {
+    @apply font-normal
+}
+
+.container-inner {
+    @apply mb-[4rem] lg:mb-[4rem] xl:mb-[15rem] px-2
+}
+
+.motion-image {
+    @apply flex left-0 right-0 mx-auto justify-center w-full
+    md:w-[70%] mt-[1rem] px-5
+}
+
+.second-container {
+    @apply space-y-8 mt-16 md:mt-auto
+}
+
+.card-text {
+    @apply text-black font-bold
+    text-3xl md:text-4xl xl:text-5xl
+}
+
+.card-text a {
+    @apply font-normal
+}
+
+.container-cards {
+    @apply relative block space-y-3 md:space-y-0 md:flex md:space-x-3
+}
+
+.card {
+    @apply relative flex w-full md:w-1/4 rounded-md lg:rounded-xl h-[9rem] sm:h-[12rem] overflow-hidden
+    md:h-[25rem] lg:h-[30rem] xl:h-[35rem]
+}
+
+.letter-card {
+    @apply absolute top-[-3rem] lg:top-[-5rem] left-3 md:left-[-9999px] md:right-[-9999px] mx-auto
+}
+
+.person-card {
+    @apply absolute left-3 top-4 md:top-auto md:bottom-0 md:right-0 mx-auto md:mb-[85%] lg:mb-[70%]
+}
+
+.text-card-inner {
+    @apply text-[15px] flex w-6/12 right-1  absolute top-0 bottom-0 m-auto text-center px-4 text-white
+                          sm:text-[20px] sm:right-10
+                          md:top-auto md:bottom-10 md:mx-auto md:text-[11px] md:right-0 md:left-0 md:w-auto
+                          lg:text-[16px] lg:h-[20%]
+}
+
+.text-card-inner p {
+    @apply top-0 bottom-0 right-0 left-0 m-auto
+}
+
+.w {
+    background-image: linear-gradient(to right, rgba(171,148,255,0), 20%, rgba(171,148,255,1));
+}
+
+.l {
+    background-image: linear-gradient(to right, rgba(121,163,255,0), 20%, rgba(121,163,255,1));
+}
+
+.k {
+    background-image: linear-gradient(to right, rgba(255,120,120,0), 20%, rgba(255,120,120,1));
+}
+
+.h {
+    background-image: linear-gradient(to right, rgba(123,236,148,0), 20%, rgba(123,236,148,1));
+}

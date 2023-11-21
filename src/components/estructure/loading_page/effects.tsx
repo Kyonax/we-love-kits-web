@@ -36,7 +36,7 @@ const back = {
         y: 0
     },
     exit: {
-        y: -window.innerHeight,
+        y: -window.innerHeight * 1.5,
         transition: {
             ease: "easeInOut",
             delay: 0.3,

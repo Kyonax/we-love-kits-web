@@ -49,8 +49,9 @@ export default function Footer () {
                     <div className="m-auto mr-0 space-x-3 lg:space-x-0 lg:space-y-3 flex lg:block w-full justify-center">
                         <button type='button' className='relative icon-style bg-[#4DFF8F] hover:bg-[#FFF384] flex text-black
                                               hover:text-black py-[1.1rem] lg:py-4 px-11 lg:px-16 pr-[1.25rem] rounded-full border-none font-bold transition duration-700'>
-                            <p className="absolute left-2 lg:left-5 top-0 bottom-0 m-auto lg:py-1">
-                            <SocialIcon network="whatsapp" bgColor="none" style={{width: 40 }}/></p>
+                            <div className="absolute left-2 lg:left-5 top-0 bottom-0 m-auto lg:py-1">
+                            <SocialIcon network="whatsapp" bgColor="none" style={{width: 40 }}/>
+                            </div>
                             <p className="ml-1 text-style">HABLEMOS</p>
                         </button>
 
@@ -65,21 +66,22 @@ export default function Footer () {
 
                         <button type='button' className='relative icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
                                               hover:text-black py-0 px-4 rounded-full border-none font-bold transition duration-700'>
-                            <p className="left-5 top-0 bottom-0 m-auto ">
-                            <SocialIcon network="instagram" bgColor="none" style={{ width: 40 }} /></p>
+                            <div className="left-5 top-0 bottom-0 m-auto ">
+                            <SocialIcon network="instagram" bgColor="none" style={{ width: 40 }} />
+                            </div>
                         </button>
 
 
                         <button type='button' className='relative icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
                                               hover:text-black py-0 px-4 rounded-full border-none font-bold transition duration-700'>
-                            <p className="left-5 top-0 bottom-0 m-auto ">
-                            <SocialIcon network="linkedin" bgColor="none" style={{  width: 40 }}/></p>
+                            <div className="left-5 top-0 bottom-0 m-auto ">
+                            <SocialIcon network="linkedin" bgColor="none" style={{  width: 40 }}/></div>
                         </button>
 
                         <button type='button' className='relative icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
                                               hover:text-black py-0 px-4 rounded-full border-none font-bold transition duration-700'>
-                            <p className="left-5 top-0 bottom-0 m-auto ">
-                            <SocialIcon network="tiktok" bgColor="none" style={{  width: 40 }}/></p>
+                            <div className="left-5 top-0 bottom-0 m-auto ">
+                            <SocialIcon network="tiktok" bgColor="none" style={{  width: 40 }}/></div>
                         </button>
                         </div>
                     </div>

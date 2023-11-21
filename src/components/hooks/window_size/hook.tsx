@@ -11,7 +11,7 @@ export const useWindowSize = () => {
     const [windowSize, setWindowSize] = useState(getCurrentDimension());
 
     useEffect(() => {
-        const updateDimension = () => { setWindowSize(getCurrentDimension()) }
+        const updateDimension = () => { setWindowSize(getCurrentDimension()); window.location.reload(); }
 
         window.addEventListener('resize', updateDimension);
         return (() => { window.removeEventListener('resize', updateDimension) })

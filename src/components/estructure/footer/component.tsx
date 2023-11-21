@@ -46,8 +46,9 @@ export default function Footer () {
                     <div className="m-auto mr-0 space-y-3">
                         <button type='button' className='relative icon-style bg-[#4DFF8F] hover:bg-[#FFF384] flex text-black
                                               hover:text-black py-4 px-16 pr-[2rem] rounded-full border-none font-bold transition duration-700'>
-                            <p className="absolute left-5 top-0 bottom-0 m-auto py-1">
-                            <SocialIcon network="whatsapp" bgColor="none"/></p>
+                            <div className="absolute left-5 top-0 bottom-0 m-auto py-1">
+                                <SocialIcon network="whatsapp" bgColor="none"/>
+                            </div>
                             <p className="ml-1 text-style">HABLEMOS</p>
                         </button>
 
@@ -62,21 +63,24 @@ export default function Footer () {
 
                         <button type='button' className='relative icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
                                               hover:text-black py-0 px-4 rounded-full border-none font-bold transition duration-700'>
-                            <p className="left-5 top-0 bottom-0 m-auto ">
-                            <SocialIcon network="instagram" bgColor="none"/></p>
+                            <div className="left-5 top-0 bottom-0 m-auto ">
+                            <SocialIcon network="instagram" bgColor="none"/>
+                            </div>
                         </button>
 
 
                         <button type='button' className='relative icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
                                               hover:text-black py-0 px-4 rounded-full border-none font-bold transition duration-700'>
-                            <p className="left-5 top-0 bottom-0 m-auto ">
-                            <SocialIcon network="linkedin" bgColor="none"/></p>
+                            <div className="left-5 top-0 bottom-0 m-auto ">
+                            <SocialIcon network="linkedin" bgColor="none"/>
+                            </div>
                         </button>
 
                         <button type='button' className='relative icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
                                               hover:text-black py-0 px-4 rounded-full border-none font-bold transition duration-700'>
-                            <p className="left-5 top-0 bottom-0 m-auto ">
-                            <SocialIcon network="tiktok" bgColor="none"/></p>
+                            <div className="left-5 top-0 bottom-0 m-auto ">
+                            <SocialIcon network="tiktok" bgColor="none"/>
+                            </div>
                         </button>
                         </div>
                     </div>

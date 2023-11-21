@@ -8,7 +8,7 @@ import { useInnerPosition } from '../components/hooks/inner_position/hook';
 import NavBar from '../components/estructure/nav_bar/component';
 import Footer from '../components/estructure/footer/index';
 import LoadingPage from '../components/estructure/loading_page/element';
-import Body from '../components/estructure/body/index';
+import Body from '../components/estructure/body/component';
 
 import './App.css';
 

@@ -20,8 +20,8 @@ export const Images = {
     'amor_letter_line': AMOR_LETTER_LINE ,
     'design_letter': DESIGN_LETTER ,
     'design_letter_line': DESIGN_LETTER_LINE ,
-    'kits_letter': KITS_LETTER_LINE ,
-    'kits_letter_line': DESIGN_LETTER_LINE ,
+    'kits_letter': KITS_LETTER ,
+    'kits_letter_line': KITS_LETTER_LINE ,
     'usables_letter': USABLES_LETTER ,
     'usables_letter_line': USABLES_LETTER_LINE ,
     'xp_letter': XP_LETTER ,
@@ -31,13 +31,13 @@ export const Images = {
 
 export const useSizeImages = (useResponsiveSize: any) => {
     const sequenceSize = useResponsiveSize(1082, 1082, 932, false);
-    const amorSize = useResponsiveSize(1200, 5245, 2173, false);
-    const arteSize = useResponsiveSize(1200, 5293, 2594, false);
-    const designSize = useResponsiveSize(1200, 5305, 2138, false);
-    const kitsSize = useResponsiveSize(1200, 3788, 2881, false);
-    const usablesSize = useResponsiveSize(800, 3586, 3325, false);
-    const xpSize = useResponsiveSize(1200, 5279, 2042, false);
+    const amorSize = useResponsiveSize(1150, 5245, 2173, false);
+    const arteSize = useResponsiveSize(1150, 5293, 2594, false);
+    const designSize = useResponsiveSize(1150, 5305, 2138, false);
+    const kitsSize = useResponsiveSize(800, 3788, 2881, false);
+    const usablesSize = useResponsiveSize(750, 3586, 3325, false);
+    const xpSize = useResponsiveSize(1150, 5279, 2042, false);
     const staticSize = useResponsiveSize(900, 1443, 1242, false);
 
-    return { sequenceSize, amorSize, arteSize, designSize, kitsSize, usablesSize, xpSize, staticSize}
+    return { arteSize, amorSize, designSize, kitsSize, usablesSize, xpSize, sequenceSize, staticSize}
 }

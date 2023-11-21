@@ -33,31 +33,32 @@ export default function NavBar () {
             else mainControls.start("hidden")
     }, [nav])
     return (
-        <div className='relative flex justify-center z-50 bg-black w-full'>
+        <div className='relative flex justify-center z-50 w-full'>
             <div className={`container-navbar`}>
                 <div className={nav ? 'hidden transition-opacity easy-in duration-800' :
                                 `p-6 flex justify-between items-center w-full z-10
-                                 pt-5 pb-2 md:pt-10 md:pb-2 lg:p-12 lg:pt-6 lg:pb-2 `}>
+                                 pt-5 pb-2 md:pt-10 md:pb-2 lg:p-12 lg:pt-6 lg:pb-2 lg:px-0`}>
 
                     <div className='flex w-[10%] items-center'>
-                        <Link className='absolute pt-6 lg:pt-8 top-0 lg:w-[7rem] hover:cursor-pointer' to={'/'}>
+                        <Link className='absolute lg:left-0 pt-6 lg:pt-8 top-0 lg:w-[7rem] hover:cursor-pointer' to={'/'}>
                             <LoadImage alt="We Love Kits Pink Logo" w={mainLogo.sizeResponsive.width} h={mainLogo.sizeResponsive.height}
                                 instantLoad={true} image={LogoWeLoveKits} / >
                         </Link>
                     </div>
 
-                    <div className='flex items-center'>
+                    <div className='flex'>
                         <ul className='hidden lg:flex'>
                             <li className='hover-nice hover:cursor-pointer m-auto hover:opacity-[100%] font-bold easy-in hover:easy-out duration-300 transition-opacity '>KITS</li>
                             <li className='hover-nice hover:cursor-pointer m-auto hover:opacity-[100%] font-bold easy-in hover:easy-out duration-300 transition-opacity'>CATEGORIAS</li>
                             <li className='hover-nice hover:cursor-pointer m-auto hover:opacity-[100%] font-bold easy-in hover:easy-out duration-300 transition-opacity'>CLIENTES</li>
                             <li className='hover-nice hover:cursor-pointer m-auto hover:opacity-[100%] font-bold easy-in hover:easy-out duration-300 transition-opacity'>CONTACTO</li>
-                            <li className='hover:cursor-pointer m-auto font-bold'>
+                            <li className='hover:cursor-pointer m-auto font-bold pr-0'>
                                 <button type='button' className='relative icon-style bg-[#4DFF8F] hover:bg-[#FFF384] flex text-black
                                               hover:text-black py-4 px-16 pr-[2rem] rounded-full border-none transition duration-700'>
 
-                                    <p className="absolute left-5 top-0 bottom-0 m-auto py-1">
-                                        <SocialIcon network="whatsapp" bgColor="none"/></p>
+                                    <div className="absolute left-5 top-0 bottom-0 m-auto py-1">
+                                        <SocialIcon network="whatsapp" bgColor="none"/>
+                                    </div>
                                         <p className="ml-1 text-style opacity-[100%]">HABLEMOS</p>
                                 </button>
                             </li>
@@ -72,11 +73,13 @@ export default function NavBar () {
                 <motion.div
 
                     variants={{
-                        hidden: {y: -1000},
-                        visible: {y: 0}
+                        hidden: {y: -window.innerHeight * 1.5},
+                        visible: {y: 0},
+                        exit: {y: -window.innerHeight * 1.5},
                     }}
                     initial="hidden"
                     animate={mainControls}
+                    exit="exit"
                     transition={{duration: 0.3, delay: 0.25}}
 
                     className={!nav ? 'hidden' : 'absolute w-screen h-screen'}>
@@ -154,9 +157,9 @@ export default function NavBar () {
 
                             <button type='button' className='mx-auto text-[11px] md:text-[14px] w-full relative icon-style bg-[#4DFF8F] hover:bg-[#FFF384] flex text-black
                                           hover:text-black py-[1.1rem] lg:py-4 px-[70%] lg:px-16 pr-[1.25rem] rounded-full border-none font-bold transition duration-700'>
-                                <p className="absolute left-0 right-0 ml-[-4.2rem] md:ml-[-6rem] lg:left-5 top-[-.01rem] md:top-1 bottom-0 m-auto lg:py-1">
+                                <div className="absolute left-0 right-0 ml-[-4.2rem] md:ml-[-6rem] lg:left-5 top-[-.01rem] md:top-1 bottom-0 m-auto lg:py-1">
                                     <SocialIcon network="whatsapp" bgColor="none" style={{width: 40 }}/>
-                                </p>
+                                </div>
                                     <p className="invisible text-style z-10">HABLEMOS</p>
                                     <p className="absolute mr-[-1.8rem] md:mr-[-2rem] left-0 right-0 mx-auto text-style z-10">HABLEMOS</p>
                             </button>
@@ -173,21 +176,24 @@ export default function NavBar () {
                             <div className="mx-auto w-full flex space-x-1 lg:space-x-[1.6rem]">
                                 <button type='button' className='relative w-1/3 icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
                                               hover:text-black py-0 px-5 rounded-full border-none font-bold transition duration-700'>
-                                    <p className="left-5 top-0 bottom-0 m-auto ">
-                                        <SocialIcon network="instagram" bgColor="none" style={{ width: 30 }} /></p>
+                                    <div className="left-5 top-0 bottom-0 m-auto ">
+                                        <SocialIcon network="instagram" bgColor="none" style={{ width: 30 }} />
+                                    </div>
                                 </button>
 
 
                                 <button type='button' className='relative w-1/3 icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
                                               hover:text-black py-0 px-5 rounded-full border-none font-bold transition duration-700'>
-                                    <p className="left-5 top-0 bottom-0 m-auto ">
-                                        <SocialIcon network="linkedin" bgColor="none" style={{  width: 30 }}/></p>
+                                    <div className="left-5 top-0 bottom-0 m-auto ">
+                                        <SocialIcon network="linkedin" bgColor="none" style={{  width: 30 }}/>
+                                    </div>
                                 </button>
 
                                 <button type='button' className='relative w-1/3 icon-style bg-[#D1C5FF] hover:bg-[#FF60E6] flex text-black
                                               hover:text-black py-0 px-5 rounded-full border-none font-bold transition duration-700'>
-                                    <p className="left-5 top-0 bottom-0 m-auto ">
-                                        <SocialIcon network="tiktok" bgColor="none" style={{  width: 30 }}/></p>
+                                    <div className="left-5 top-0 bottom-0 m-auto ">
+                                        <SocialIcon network="tiktok" bgColor="none" style={{  width: 30 }}/>
+                                    </div>
                                 </button>
                             </div>
                         </div>

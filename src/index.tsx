@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -10,6 +10,13 @@ import ScrollToTop from './components/hooks/scroll_top/hook';
 
 const root = createRoot( document.getElementById('root') as HTMLElement );
 
-root.render(<BrowserRouter> <ScrollToTop> <App /> </ScrollToTop> </ BrowserRouter>);
+root.render(
+    <BrowserRouter>
+        <ScrollToTop>
+            <Routes>
+                <Route path="/docs-web-testingv-70" element={<App />} / >
+            </Routes>
+        </ScrollToTop>
+    </ BrowserRouter>);
 
 reportWebVitals(console.log);

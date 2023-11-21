@@ -1,0 +1,7 @@
+.background {
+    @apply absolute object-cover
+}
+
+.container-card {
+    @apply bg-black relative flex justify-center items-center overflow-hidden
+}

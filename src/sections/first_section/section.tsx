@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 
 import { Images, useSizeImages } from './imports';
+import { useRandomUpdate } from '../../components/hooks/random_array/hook';
 import { renderCanvas, sequencePlay } from './canvas';
 import {  useResponsiveSize } from '../../components/elements/image_load/useResponsiveSize';
 import { motion, useInView, useAnimation, useIsPresent } from "framer-motion";
@@ -9,25 +10,55 @@ import { motion, useInView, useAnimation, useIsPresent } from "framer-motion";
 import LoadImage from '../../components/elements/image_load/component';
 
 import { drawInCanvas } from "./canvas";
-import './letters.css'; import './style.css';
+import './style.css';
 
 interface FirstSectionProps { innerPosition: any, sequenceAnimation: any }
 
 const FirstSection: React.FC<FirstSectionProps> = ({ innerPosition, sequenceAnimation }) => {
     const [inAnimation, setInAnimation] = useState(false), [toAnimation, setToAnimation] = useState(true),
-          [timeLineOrder, setTimeLineOrder] = useState(true);
+          [timeLineOrder, setTimeLineOrder] = useState(true), [contextKey, setContextKey] = useState('DESIGN'),
+          [colorKey, setColorKey] = useState('#AB94FF');
 
-    console.log(Object.keys({Image}));
+    const theColors = ["#AB94FF","#FFE661","#FFBCFD","#FF8787","#7DE2FF","#7EEDAA"];
+    const theWordsElement = ["ARTE","AMOR","KITS","DESIGN", "USABLES", "XP"];
+
+    const updateContextKey = useRandomUpdate(theWordsElement, 0, 5000, setContextKey);
+    const updateColorKey = useRandomUpdate(theColors, 0, 5000, setColorKey);
     
     const [frameIndex, setFrameIndex] = useState(0), [context, setContext] = useState(null);
 
-    const { staticSize, amorSize, arteSize, designSize, kitsSize, usablesSize, xpSize } = useSizeImages(useResponsiveSize);
+    const { arteSize, amorSize, designSize, kitsSize, usablesSize, xpSize, sequenceSize, staticSize } = useSizeImages(useResponsiveSize);
+    const arrayLetters = [{'key': 'ARTE', 'size': arteSize, 'img': Images.arte_letter, 'line': Images.arte_letter_line },
+                          {'key': 'AMOR', 'size': amorSize, 'img': Images.amor_letter, 'line': Images.amor_letter_line },
+                          {'key': 'DESIGN', 'size': designSize, 'img': Images.design_letter, 'line': Images.design_letter_line },
+                          {'key': 'KITS', 'size': kitsSize, 'img': Images.kits_letter, 'line': Images.kits_letter_line },
+                          {'key': 'USABLES', 'size': usablesSize, 'img': Images.usables_letter, 'line': Images.usables_letter_line },
+                          {'key': 'XP', 'size': xpSize, 'img': Images.xp_letter, 'line': Images.xp_letter_line }];
     
     const canvas_ref = useRef<HTMLCanvasElement>(null);
+    
+    let lettersBanner = arrayLetters.map((item, i) => {
+        return(
+            <div key={i}>
+                <div style={{width: `${arrayLetters[i].size.sizeResponsive.width}px`, height: `${arrayLetters[i].size.sizeResponsive.height}px`}}
+                        className={contextKey === arrayLetters[i].key ? 'opacity-100 transition-every line-letter' : 'opacity-0 transition-every line-letter'}>
+                    <LoadImage alt="Static Frame Lastest" w={arrayLetters[i].size.sizeResponsive.width} h={arrayLetters[i].size.sizeResponsive.height}
+                               instantLoad={true} image={arrayLetters[i].line} />
+                </div>
+                <div style={{width: `${arrayLetters[i].size.sizeResponsive.width}px`, height: `${arrayLetters[i].size.sizeResponsive.height}px`}}
+                     className={contextKey === arrayLetters[i].key ? 'opacity-100 transition-every default-letter' : 'opacity-0 transition-every default-letter'}>
+                    <LoadImage alt="Static Frame Lastest" w={arrayLetters[i].size.sizeResponsive.width} h={arrayLetters[i].size.sizeResponsive.height}
+                               instantLoad={true} image={arrayLetters[i].img} />
+                </div>
+            </div>
+        )
+    })
 
     useEffect(() => {const context_render = renderCanvas(canvas_ref, staticSize); setContext(context_render)}, [])
 
     useEffect(() => { if(innerPosition <= 464 && innerPosition > 0) return setToAnimation(true) }, [innerPosition])
+
+
 
     useEffect(() => {
         let init = frameIndex, sequenceSize = 96;
@@ -55,19 +86,11 @@ const FirstSection: React.FC<FirstSectionProps> = ({ innerPosition, sequenceAnim
     }, [timeLineOrder, context, toAnimation])
     
     return (
-        <div className="container-section">
+        <div className="container-section transition-every" style={{backgroundColor: colorKey}}>
             <div className="first-section">
                 <div className="letter-section">
                     <div className="letter">
-                            
-                        <div className="line-letter">
-                            <LoadImage alt="Static Frame Lastest" w={usablesSize.sizeResponsive.width} h={usablesSize.sizeResponsive.height}
-                                       instantLoad={true} image={Images.usables_letter_line} />
-                        </div>
-                        <div className="default-letter">
-                            <LoadImage alt="Static Frame Lastest" w={usablesSize.sizeResponsive.width} h={usablesSize.sizeResponsive.height}
-                                       instantLoad={true} image={Images.usables_letter} />
-                        </div>
+                        { lettersBanner }
                     </div>
                 </div>
 

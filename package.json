@@ -1,5 +1,6 @@
 {
   "name": "we-love-kits-docs-web",
+  "homepage": "/docs-web-testingv-70",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
